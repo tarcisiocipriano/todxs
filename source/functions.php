@@ -1,11 +1,19 @@
 <?php
+/**
+ * Todxs functions and definitions
+ * 
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ * 
+ * @package Todxs
+ */
 
-function theme_styles() {
-  wp_enqueue_style('theme_style', get_theme_file_uri('/stylesheets/main.css'));
-  wp_enqueue_script('theme_script1', get_theme_file_uri("/scripts/vendors.js"));
-  wp_enqueue_script('theme_script2', get_theme_file_uri("/scripts/main.js"));
+function todxs_scripts() {
+  // after finish, change the filemtime() function to '1.0'
+  wp_enqueue_style( 'todxs-style', get_template_directory_uri() . '/stylesheets/main.css', array(), filemtime( get_template_directory() . '/stylesheets/main.css' ), 'all' );
+  wp_enqueue_script( 'todxs_script_vendors', get_template_directory_uri() . '/scripts/vendors.js', array(), '1.0', true );
+  wp_enqueue_script( 'todxs_script_main', get_template_directory_uri() . '/scripts/main.js', array(), '1.0', true );
 }
-add_action('wp_enqueue_scripts', 'theme_styles');
+add_action( 'wp_enqueue_scripts', 'todxs_scripts' );
 
 function theme_features() {
   add_theme_support('title-tag');

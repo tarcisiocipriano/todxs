@@ -6,3 +6,35 @@
 @import 'layout/module';
 @import 'pages/module';
 @import 'vendors/module';
+
+
+.post-type-archive-product {
+
+  .product {
+    transition: .2s;
+  
+    padding: 16px !important;
+    
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+    }
+  }
+
+  .add_to_cart_button {
+    width: 100%;
+    text-align: center;
+    background-color: $purple !important;
+    color: #fff !important;
+
+    &.loading {
+      opacity: 1 !important;
+    }
+  }
+
+  // .product-card__buy-button {
+  //   background-color: red !important;
+  //   display: flex;
+  //   text-align: center;
+  // }
+}
