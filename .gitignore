@@ -1,0 +1,12 @@
+/node_modules
+
+/maps
+/stylesheets
+/scripts
+
+*.php
+!source/*php
+!source/woocommerce/**/*php
+
+style.css
+!source/stylesheets/style.css
