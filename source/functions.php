@@ -20,7 +20,7 @@ function todxs_config() {
   register_nav_menus(
     array(
       'todxs_main_menu'   => 'Todxs Main Menu',
-      'todxs_second_menu' => 'Todxs Second Menu'
+      'todxs_footer_menu' => 'Todxs Footer Menu'
     )
   );
 }
