@@ -44,3 +44,7 @@ function todxs_config() {
   }
 }
 add_action( 'after_setup_theme', 'todxs_config', 0 );
+
+if ( class_exists( 'WooCommerce' ) ) {
+  require get_template_directory() . '/inc/wc-modification.php';
+}
