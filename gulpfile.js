@@ -28,14 +28,6 @@ function images() {
     .pipe(gulp.dest("./assets/images"))
 }
 
-function php() {
-  return gulp.src("source/*.php").pipe(gulp.dest("./"))
-}
-
-function woocommercePhp() {
-  return gulp.src("source/woocommerce/**/*").pipe(gulp.dest("./woocommerce"))
-}
-
 function css() {
   return gulp
     .src("source/stylesheets/**/*.scss")
@@ -46,10 +38,6 @@ function css() {
     .pipe($.sourcemaps.write("../maps"))
     .pipe(gulp.dest("./stylesheets"))
     .pipe(browserSync.stream())
-}
-
-function themestyle() {
-  return gulp.src("source/stylesheets/style.css").pipe(gulp.dest("./"))
 }
 
 function Vendors() {
@@ -83,9 +71,6 @@ function js() {
 }
 
 function clean(done) {
-  del("*.php")
-  del("*.css")
-  del("woocommerce")
   del("stylesheets")
   del("scripts")
   del("maps")
@@ -100,8 +85,7 @@ function watch_files() {
   gulp.watch("source/fonts/**/*", fonts)
   gulp.watch("source/images/**/*", images)
 
-  gulp.watch("source/*.php", php).on("change", browserSync.reload)
-  gulp.watch("source/woocommerce/**/*.php", woocommercePhp).on("change", browserSync.reload)
+  gulp.watch("**/*.php").on("change", browserSync.reload)
   gulp.watch("source/stylesheets/**/*.scss", css)
   gulp.watch("source/scripts/**/*.js", js).on("change", browserSync.reload)
 
@@ -118,10 +102,7 @@ function build(done) {
   data()
   files()
   fonts()
-  php()
-  woocommercePhp()
   css()
-  themestyle()
   js()
   Vendors()
   done()
