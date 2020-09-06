@@ -15,18 +15,17 @@ function todxs_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'todxs_scripts' );
 
-function theme_features() {
+function todxs_config() {
   add_theme_support('title-tag');
+  register_nav_menus(
+    array(
+      'todxs_main_menu'   => 'Todxs Main Menu',
+      'todxs_second_menu' => 'Todxs Second Menu'
+    )
+  );
 }
-add_action('after_setup_theme', 'theme_features');
+add_action( 'after_setup_theme', 'todxs_config', 0 );
 
-
-// add_theme_support('menus');
-// register_nav_menus(
-//   array(
-//     'top-menu' => 'Main Menu'
-//   )
-// );
 
 function mytheme_add_woocommerce_support() {
   add_theme_support( 'woocommerce' );
