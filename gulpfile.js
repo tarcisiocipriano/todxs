@@ -11,6 +11,10 @@ function files() {
   return gulp.src("source/files/**/*").pipe(gulp.dest("./assets/files"))
 }
 
+function icons() {
+  return gulp.src("source/icons/**/*").pipe(gulp.dest("./assets/icons"))
+}
+
 function fonts() {
   return gulp.src("source/fonts/**/*").pipe(gulp.dest("./assets/fonts"))
 }
@@ -44,11 +48,11 @@ function Vendors() {
   return gulp
     .src([
       "node_modules/jquery/dist/jquery.min.js",
-      "node_modules/jquery-smooth-scroll/src/jquery.smooth-scroll.js",
-      "node_modules/popper.js/dist/umd/popper.min.js",
+      // "node_modules/jquery-smooth-scroll/src/jquery.smooth-scroll.js",
+      // "node_modules/popper.js/dist/umd/popper.min.js",
       "node_modules/bootstrap/dist/js/bootstrap.min.js",
       "node_modules/slick-carousel/slick/slick.min.js",
-      "node_modules/lottie-web/build/player/lottie_light.min.js",
+      // "node_modules/lottie-web/build/player/lottie_light.min.js",
     ])
     .pipe($.sourcemaps.init({ loadMaps: true }))
     .pipe($.concat("vendors.js"))
@@ -71,17 +75,17 @@ function js() {
 }
 
 function clean(done) {
-  del("stylesheets")
-  del("scripts")
+  del("assets")
   del("maps")
-  del("assets/files")
-  del("assets/fonts")
+  del("scripts")
+  del("stylesheets")
   done()
 }
 
 function watch_files() {
   gulp.watch("source/data/**/*", data)
   gulp.watch("source/files/**/*", files)
+  gulp.watch("source/icons/**/*", icons)
   gulp.watch("source/fonts/**/*", fonts)
   gulp.watch("source/images/**/*", images)
 
@@ -101,6 +105,7 @@ function watch_files() {
 function build(done) {
   data()
   files()
+  icons()
   fonts()
   css()
   js()
