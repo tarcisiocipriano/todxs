@@ -10,8 +10,12 @@
 // register custom navigation walker
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
+// register customizable settings
+require_once get_template_directory() . '/inc/customizer.php';
+
+// import scripts
 function todxs_scripts() {
-  // after finish, change the filemtime() function to '1.0'
+  // to-do: after finish, change the filemtime() function to '1.0'
   wp_enqueue_style( 'todxs-style', get_template_directory_uri() . '/stylesheets/main.css', array(), filemtime( get_template_directory() . '/stylesheets/main.css' ), 'all' );
   wp_enqueue_script( 'todxs_script_vendors', get_template_directory_uri() . '/scripts/vendors.js', array(), '1.0', true );
   wp_enqueue_script( 'todxs_script_main', get_template_directory_uri() . '/scripts/main.js', array(), '1.0', true );
@@ -20,6 +24,7 @@ function todxs_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'todxs_scripts' );
 
+// theme setup
 function todxs_config() {
   
   // add support to browser tab's title
