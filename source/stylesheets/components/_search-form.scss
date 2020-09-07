@@ -1,0 +1,19 @@
+.search-form {
+  button {
+    background-image: url('../icons/search.svg');
+    width: 23px;
+    height: 23px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+  }
+
+  input[type="search"] {
+    background-color: #fff;
+    border: none;
+    font-weight: 500;
+    font-size: 110%;
+    padding: .3rem 1rem;
+    margin-right: 0.3rem;
+  }
+}
