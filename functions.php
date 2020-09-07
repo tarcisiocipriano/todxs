@@ -24,6 +24,14 @@ function todxs_config() {
   
   // add support to browser tab's title
   add_theme_support('title-tag');
+  
+  // add support to logo customization
+  add_theme_support( 'custom-logo', array(
+    'width'       => 160,
+    'height'      => 85,
+    'flex_width'  => true,
+    'flex_height' => true
+  ));
 
   // register menus
   register_nav_menus(
