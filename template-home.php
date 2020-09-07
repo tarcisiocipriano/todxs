@@ -7,8 +7,26 @@ get_header(); ?>
   <div class="content-area">
     <main>
       <section class="slider">
-        <div class="container">
-          <div class="row">Slider</div>
+        <div class="slick-carousel">
+          <!-- to-do: create the carousel template -->
+          <?php
+          $carousel = new WP_Query(array(
+            'post_type' => 'carousel',
+            'posts_per_page' => '3'
+          ));
+
+          if( $carousel->have_posts() ):
+            while( $carousel->have_posts() ):
+              $carousel->the_post();?>
+
+              <li style="height: 300px; background: tomato"></li>
+          <?php
+            endwhile;
+            wp_reset_postdata();
+            endif;
+          ?>
+          <li style="height: 300px; background: lightblue"></li>
+          <li style="height: 300px; background: lightgreen"></li>
         </div>
       </section>
       <section class="popular-products">
