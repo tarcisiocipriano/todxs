@@ -7,6 +7,9 @@
  * @package Todxs
  */
 
+// register custom navigation walker
+require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+
 function todxs_scripts() {
   // after finish, change the filemtime() function to '1.0'
   wp_enqueue_style( 'todxs-style', get_template_directory_uri() . '/stylesheets/main.css', array(), filemtime( get_template_directory() . '/stylesheets/main.css' ), 'all' );
@@ -18,13 +21,19 @@ function todxs_scripts() {
 add_action( 'wp_enqueue_scripts', 'todxs_scripts' );
 
 function todxs_config() {
+  
+  // add support to browser tab's title
   add_theme_support('title-tag');
+
+  // register menus
   register_nav_menus(
     array(
       'todxs_main_menu'   => 'Todxs Main Menu',
       'todxs_footer_menu' => 'Todxs Footer Menu'
     )
   );
+
+  // add supoort to woocommerce
   add_theme_support( 'woocommerce', array(
     'thumbnail_image_width' => 255,
     'single_image_width'    => 255,

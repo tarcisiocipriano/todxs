@@ -1,4 +1,6 @@
 .main-menu {
+  padding: 0;
+  
   ul {
     margin: 0;
     padding: 0;
@@ -11,6 +13,13 @@
     &:last-child {
       margin: 0;
     }
+  }
+  .dropdown:hover > .dropdown-menu,
+  .dropup:hover > .dropdown-menu {
+    display: block;
+  }
+  .navbar-toggler-icon {
+    background-image: url('../icons/hamburger-menu.svg');
   }
 }
 
