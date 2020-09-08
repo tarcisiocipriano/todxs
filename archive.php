@@ -12,26 +12,29 @@ get_header(); ?>
     <main>
       <div class="container">
         <div class="row">
-          <?php
+          <div class="col-12 col-md-8 col-lg-9">
+            <?php
 
-            the_archive_title( '<h1 class="article-title">', '</h1>' );
+              the_archive_title( '<h1 class="article-title">', '</h1>' );
 
-            if( have_posts() ):
+              if( have_posts() ):
 
-              while( have_posts() ): the_post();
-                get_template_part( 'template-parts/content', 'archive' );
-              endwhile;
+                while( have_posts() ): the_post();
+                  get_template_part( 'template-parts/content', 'archive' );
+                endwhile;
+                
+                the_posts_pagination( array(
+                  'prev_text' => 'Anterior',
+                  'next_text' => 'Próximo'
+                ));
+
+              else: ?>
               
-              the_posts_pagination( array(
-                'prev_text' => 'Anterior',
-                'next_text' => 'Próximo'
-              ));
+              <p>Nenhuma postagem.</p>
 
-            else: ?>
-            
-            <p>Nenhuma postagem.</p>
-
-          <?php endif; ?>
+            <?php endif; ?>
+          </div>
+          <?php get_sidebar(); ?>
         </div>
       </div>
     </main>

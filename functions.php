@@ -114,3 +114,17 @@ function todxs_woocommerce_header_add_to_cart_fragment( $fragments ) {
 	$fragments['span.cart__quantity'] = ob_get_clean();
 	return $fragments;
 }
+
+// register sidebars
+function todxs_sidebars() {
+  register_sidebar(array(
+    'name'          => 'Todxs Main Sidebar',
+    'id'            => 'todxs-sidebar-1',
+    'description'   => 'Drag and drop your widgets here',
+    'before_widget' => '<div id="%1$s" class="widget %2$s widget-wrapper">',
+    'after_widget'  => '</div>',
+    'before_title' => '<h4 class="widget-title">',
+    'after_title'  => '</h4>'
+  ));
+}
+add_action( 'widgets_init', 'todxs_sidebars' );

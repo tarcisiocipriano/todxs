@@ -17,24 +17,28 @@ get_header(); ?>
     <main>
       <div class="container">
         <div class="row">
-          <?php
-          
-            if( have_posts() ):
+          <div class="col-12 col-md-8 col-lg-9">
+            <?php
+            
+              if( have_posts() ):
+  
+                while( have_posts() ): the_post();
+                  get_template_part( 'template-parts/content' );
+                endwhile;
+  
+                the_posts_pagination( array(
+                  'prev_text' => 'Anterior',
+                  'next_text' => 'Próximo'
+                ));
+                
+              else: ?>
+  
+              <p>Nenhuma postagem.</p>
+  
+            <?php endif; ?>
 
-              while( have_posts() ): the_post();
-                get_template_part( 'template-parts/content' );
-              endwhile;
-
-              the_posts_pagination( array(
-                'prev_text' => 'Anterior',
-                'next_text' => 'Próximo'
-              ));
-              
-            else: ?>
-
-            <p>Nenhuma postagem.</p>
-
-          <?php endif; ?>
+          </div>
+          <?php get_sidebar(); ?>
         </div>
       </div>
     </main>
