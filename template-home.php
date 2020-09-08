@@ -43,11 +43,20 @@ get_header(); ?>
           <?php echo do_shortcode( '[products limit="4" columns="4" orderby="date"]' ); ?>
         </div>
       </section>
-      <section class="deal-of-the-week">
+      <!-- to-do: implement deal of the week -->
+      <!-- <section class="deal-of-the-week">
         <div class="container">
-          <div class="row">Deal of the week</div>
+          <h2>Destaque da semana</h2>
+          <div class="row d-flex align-items-center">
+            <div class="col-12 col-md-6 ml-auto text-center deal-img">
+
+            </div>
+            <div class="col-12 col-md-4 mr-auto text-center deal-desc">
+
+            </div>
+          </div>
         </div>
-      </section>
+      </section> -->
       <section class="todxs-blog">
         <div class="container">
           <div class="row">
