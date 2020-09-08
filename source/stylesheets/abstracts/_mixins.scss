@@ -1,0 +1,39 @@
+$small: 768px;
+$medium: 991px;
+$large: 1200px;
+
+@mixin atSmall {
+  @media (min-width: #{$small}) {
+    @content;
+  }
+}
+
+@mixin atMedium {
+  @media (min-width: #{$medium}) {
+    @content;
+  }
+}
+
+@mixin atLarge {
+  @media (min-width: #{$large}) {
+    @content;
+  }
+}
+
+@mixin untilSmall {
+  @media (max-width: #{$small}) {
+    @content;
+  }
+}
+
+@mixin untilMedium {
+  @media (max-width: #{$medium}) {
+    @content;
+  }
+}
+
+@mixin untilLarge {
+  @media (max-width: #{$large}) {
+    @content;
+  }
+}

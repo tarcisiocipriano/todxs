@@ -21,74 +21,102 @@
 
   <div id="page" class="site">
     <header>
-      <section class="search">
-        <div class="container">
-          <div class="text-center d-md-flex align-items-center"><?php get_search_form(); ?></div>
-        </div>
-      </section>
-      <section class="top-bar">
+
+      <section class="navbar--small" >
         <div class="container">
           <div class="row">
-            <div class="brand col-12 col-md-3 col-lg-2 text-center text-md-left">
-              <a href="<?php home_url( '/' ); ?>">
-                <?php if( has_custom_logo() ): ?>
-                  <?php the_custom_logo(); ?>
+            <div class="col-6">
+              <span>(81) 8222-0235</span>
+            </div>
+            <?php if( class_exists( 'WooCommerce' ) ): ?>
+            <div class="col-6">
+              <ul class="d-flex justify-content-end" style="list-style-type: none; margin: 0; padding: 0;">
+                <?php if( is_user_logged_in() ): ?>
+                <li>
+                  <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>" class="nav-link">Minha Conta</a>
+                </li>
+                <li>
+                  <a href="<?php echo esc_url( wp_logout_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ) ); ?>" class="nav-link">Sair</a>
+                </li>
                 <?php else: ?>
-                  <p class="site-title"><?php bloginfo( 'title' ); ?></p>
-                  <span><?php bloginfo( 'description' ); ?></span>
+                <li>
+                  <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>" class="nav-link">Entrar / Criar conta</a>
+                </li>
                 <?php endif; ?>
-              </a>
+              </ul>
             </div>
-            <div class="second-column col-12 col-md-9 col-lg-10">
-              <div class="row">
-                <?php if( class_exists( 'WooCommerce' ) ): ?>
-                <div class="account col-12">
-                  <div class="navbar-expand">
-                    <ul class="navbar-nav float-left">
-                      <?php if( is_user_logged_in() ): ?>
-                      <li>
-                        <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>" class="nav-link">Minha Conta</a>
-                      </li>
-                      <li>
-                        <a href="<?php echo esc_url( wp_logout_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ) ); ?>" class="nav-link">Sair</a>
-                      </li>
-                      <?php else: ?>
-                      <li>
-                        <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>" class="nav-link">Entrar / Criar conta</a>
-                      </li>
-                      <?php endif; ?>
-                    </ul>
-                  </div>
-                  <div class="cart text-right">
-                    <a href="<?php echo wc_get_cart_url(); ?>"><span class="cart__icon"></span></a>
-                    <span class="cart__quantity"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-                  </div>
-                </div>
-                <?php endif; ?>
-                <div class="col-12">
-                  <nav class="main-menu navbar navbar-expand-md navbar-light" role="navigation">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <?php
-                      wp_nav_menu( array(
-                          'theme_location'    => 'todxs_main_menu',
-                          'depth'             => 2,
-                          'container'         => 'div',
-                          'container_class'   => 'collapse navbar-collapse',
-                          'container_id'      => 'bs-example-navbar-collapse-1',
-                          'menu_class'        => 'nav navbar-nav',
-                          'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-                          'walker'            => new WP_Bootstrap_Navwalker(),
-                      ));
-                    ?>
-                  </nav>
-                </div>
-              </div>
-            </div>
+            <?php endif; ?>
           </div>
         </div>
+      </section>
+
+      <section class="top-bar">
+        <div class="container">
+
+          <div class="d-flex justify-content-between align-items-center my-3 my-lg-0">
+            
+            <h1 class="m-0">
+              <a href="<?php echo home_url( '/' ); ?>">
+                <img class="d-block top-bar__logo" src="<?php echo get_theme_file_uri( "/assets/icons/todxs-logo.svg" ); ?>" alt="" width="150" height="50">
+              </a>
+            </h1>
+
+            <div class="mx-3 mx-lg-5 w-100"><?php get_search_form(); ?></div>
+
+            <div class="d-flex align-items-center top-bar__actions" >
+              
+              <?php if( class_exists( 'WooCommerce' ) ): ?>
+                <div class="cart mr-3 mr-lg-0">
+                  <a href="<?php echo wc_get_cart_url(); ?>"><span class="cart__icon"></span></a>
+                  <span class="cart__quantity"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                </div>
+              <?php endif; ?>
+
+              <div class="button__burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <nav class="category__menu">
+            <ul>
+              <li>
+                <a href="<?php echo site_url( '/categoria-produto/preservativos' ); ?>">Preservativos</a>
+              </li>
+              <li>
+                <a href="<?php echo site_url( '/categoria-produto/cosmeticos' ); ?>">Cosméticos</a>
+              </li>
+              <li>
+                <a href="<?php echo site_url( '/categoria-produto/lubrificantes' ); ?>">Lubrificantes</a>
+              </li>
+              <li>
+                <a href="<?php echo site_url( '/categoria-produto/higiene' ); ?>">Higiene</a>
+              </li>
+              <li>
+                <a href="<?php echo site_url( '/categoria-produto/vibradores' ); ?>">Vibradores</a>
+              </li>
+              <li>
+                <a href="<?php echo site_url( '/categoria-produto/proteses-e-cintas' ); ?>">Próteses e Cintas</a>
+              </li>
+              <li>
+                <a href="<?php echo site_url( '/categoria-produto/plug-anal' ); ?>">Plug Anal</a>
+              </li>
+              <li>
+                <a href="<?php echo site_url( '/categoria-produto/brincadeiras' ); ?>">Brincadeiras</a>
+              </li>
+              <li>
+                <a href="<?php echo site_url( '/categoria-produto/acessorios' ); ?>">Acessórios</a>
+              </li>
+              <li>
+                <a href="<?php echo site_url( '/categoria-produto/linha-sado' ); ?>">Linha Sado</a>
+              </li>
+            </ul>
+          </nav>
+
+        </div> <!-- /container -->
       </section>
     </header>
 

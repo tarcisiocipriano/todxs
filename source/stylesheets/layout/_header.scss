@@ -1,9 +1,25 @@
-.top-bar {
+header {
+  background-color: #fff;
 
-  .brand {
+  .navbar--small {
+    display: none;
+    @include atMedium {
+      display: block;
+    }
   }
-  
-  .second-column {
+
+  .top-bar {
+    transition: .2s;
+    background-color: #fff;
+
+    &__logo {
+      min-width: 80px;
+      max-width: 80px;
+
+      @include atMedium {
+        min-width: 150px;
+        max-width: 150px;
+      }
+    }
   }
-  
 }
