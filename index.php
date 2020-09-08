@@ -30,7 +30,7 @@ get_header(); ?>
                     </div>
                   </a>
                   <div class="meta">
-                    <p>Postado por <?php the_author_posts_link(); ?> em <?php echo get_the_date(); ?></p>
+                    <p>Postado por <?php the_author_posts_link(); ?> em <?php echo get_the_date( 'd F, Y' ); ?>.</p>
                     <br />
                     <?php if( has_category() ): ?>
                       Categorias: <span><?php the_category( ' ' ) ?></span>

@@ -17,7 +17,7 @@ get_header(); ?>
               <header>
                 <h1><?php the_title(); ?></h1>
                 <div class="meta">
-                  <p>Publicado por <?php the_author_posts_link(); ?> em <?php echo get_the_date(); ?><br />
+                  <p>Publicado por <?php the_author_posts_link(); ?> em <?php echo get_the_date( 'd F, Y' ); ?>.<br />
                   Categorias: <span><?php the_category( ' ' ); ?><br/>
                   <?php if(has_tag()): ?>
                     Tags: <span><?php the_tags( '', ', '); ?></span>
