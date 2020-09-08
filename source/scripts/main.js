@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $(".slick-carousel").slick({
     dots: true,
-    arrows: false,
+    arrows: true,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 2000,
