@@ -22,7 +22,12 @@ get_header(); ?>
               <h1><?php the_title(); ?></h1>
               <div><?php the_content(); ?></div>
             </article>
-          <?php endwhile; ?>
+          <?php
+            if( comments_open() || get_comments_number ):
+              comments_template();
+            endif;
+            endwhile;
+          ?>
         </div>
       </div>
     </main>
