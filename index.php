@@ -42,7 +42,14 @@ get_header(); ?>
                   </div>
                   <div><?php the_excerpt(); ?></div>
                 </article>
-            <?php endwhile; else: ?>
+            <?php
+              endwhile;
+              the_posts_pagination( array(
+                'prev_text' => 'Anterior',
+                'next_text' => 'Próximo'
+              ));
+              else:
+            ?>
             <p>Nenhuma postagem.</p>
           <?php endif; ?>
         </div>
