@@ -59,19 +59,31 @@ get_header(); ?>
       </section> -->
       <section class="todxs-blog">
         <div class="container">
+          <h2>Notícias</h2>
           <div class="row">
             <?php
-              if( have_posts() ):
-                while( have_posts() ): the_post();
-                  ?>
-                    <article>
-                      <h2><?php the_title(); ?></h2>
-                      <div><?php the_content(); ?></div>
-                    </article>
-                  <?php
-                endwhile;
-              else:
-            ?>
+              $blog_posts = new WP_Query(array(
+                'post_type'      => 'post',
+                'posts_per_page' => 2
+              ));
+              
+              if( $blog_posts->have_posts() ):
+                while( $blog_posts->have_posts() ): $blog_posts->the_post(); ?>
+
+                <article class="col-12 col-md-6">
+                  <a href="<?php the_permalink(); ?>">
+                    <?php
+                      if( has_post_thumbnail() ):
+                        the_post_thumbnail( 'todxs-blog', array( 'class' => 'img-fluid' ) );
+                      endif;
+                    ?>
+                  </a>
+                  <h3>
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                  </h3>
+                  <div class="excerpt"><?php the_excerpt(); ?></div>
+                </article>
+              <?php endwhile; wp_reset_postdata(); else: ?>
               <p>Nothing to display.</p>
             <?php endif; ?>
           </div>

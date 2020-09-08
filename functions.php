@@ -28,7 +28,13 @@ add_action( 'wp_enqueue_scripts', 'todxs_scripts' );
 function todxs_config() {
   
   // add support to browser tab's title
-  add_theme_support('title-tag');
+  add_theme_support( 'title-tag' );
+
+  // add support to post thumbnails
+  add_theme_support( 'post-thumbnails' );
+
+  // add image size
+  add_image_size( 'todxs-blog', 960, 640, array( 'center', 'center' ) );
   
   // add support to logo customization
   add_theme_support( 'custom-logo', array(
