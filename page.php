@@ -23,7 +23,7 @@ get_header(); ?>
               <div><?php the_content(); ?></div>
             </article>
           <?php
-            if( comments_open() || get_comments_number ):
+            if( comments_open() || get_comments_number() ):
               comments_template();
             endif;
             endwhile;
