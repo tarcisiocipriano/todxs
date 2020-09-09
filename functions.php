@@ -59,9 +59,9 @@ function todxs_config() {
       'default_rows'       => 5,
       'min_rows'           => 5,
       'max_rows'           => 5,
-      'default_columns'    => 3,
-      'min_columns'        => 3,
-      'max_columns'        => 3
+      'default_columns'    => 4,
+      'min_columns'        => 4,
+      'max_columns'        => 4
     )
   ));
   add_theme_support( 'wc-product-gallery-zoom' );

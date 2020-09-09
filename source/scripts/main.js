@@ -16,9 +16,9 @@ $('body').css('padding-top', topBar.height());
 $(window).scroll(function() {
   $('body').css('padding-top', topBar.height());
   if($(window).scrollTop() > 40) {
-    topBar.addClass('top-bar--dense')
+    topBar.addClass('top-bar--dense');
   } else {
-    topBar.removeClass('top-bar--dense')
+    topBar.removeClass('top-bar--dense');
   }
 });
 
@@ -48,10 +48,12 @@ $('.search-field').focusout(function() {
 });
 
 
-lottie.loadAnimation({
-  container: document.getElementById('pride'), // the dom element that will contain the animation
-  renderer: 'svg',
-  loop: true,
-  autoplay: true,
-  path: 'https://assets9.lottiefiles.com/packages/lf20_pKGPqV.json' // the path to the animation json
+$.each($('.woocommerce span.onsale'), function( index, value ) {
+  lottie.loadAnimation({
+    container: value, // the dom element that will contain the animation
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'https://assets9.lottiefiles.com/packages/lf20_pKGPqV.json' // the path to the animation json
+  });
 });

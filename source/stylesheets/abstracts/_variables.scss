@@ -23,7 +23,11 @@ $blue600: darken( $blue500, 10% );
 $blue700: darken( $blue500, 20% );
 
 $purple500: #6A4C93;
+$purple100: lighten( $purple500, 40% );
+$purple200: lighten( $purple500, 30% );
 $purple300: lighten( $purple500, 20% );
 $purple400: lighten( $purple500, 10% );
 $purple600: darken( $purple500, 10% );
 $purple700: darken( $purple500, 20% );
+
+$black: #333333;

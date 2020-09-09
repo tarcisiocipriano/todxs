@@ -1,3 +1,56 @@
+// button primary
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+  background-color: $purple500;
+  border: none;
+  color: white;
+}
+
+// button outline
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
+  background-color: white;
+  border: 2px solid $purple500;
+  color: $purple500;
+  text-align: center;
+  transition: background-color .2s;
+  &:hover, &:focus {
+    background-color: $purple100;
+    color: $purple500;
+  }
+  &.loading {
+    opacity: 1;
+
+    padding: 10px 0;
+    &::after {
+      content: "\e031";
+      padding-right: 0;
+    }
+  }
+  &.added {
+    &::after {
+      content: '';
+    }
+  }
+}
+
+.woocommerce a.button {
+  width: 100%;
+}
+
+// button on category page
+.archive, .tax-product_cat {
+  a.button {
+    background-color: $green500;
+    color: #fff;
+    border: none;
+    width: 100%;
+
+    &:hover, &:focus {
+      background-color: $green600;
+      color: #fff;
+    }
+  }
+}
+
 .button {
 
   &__burger {
