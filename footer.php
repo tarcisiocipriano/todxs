@@ -7,7 +7,7 @@
  * @package Todxs
 */
 ?>
-    <footer class="footer">
+    <footer class="footer pt-4">
       <section class="footer-widgets">
         <div class="container">
           <div class="row">
@@ -32,7 +32,7 @@
       <section class="copyright">
         <div class="container">
           <div class="copyright-text text-center">
-            <p>Ⓒ 2020 - Sex Shop Todxs - All rights reserved | Design by <a href="https://tarcisiocipriano.com/"><strong>Tarcísio Cipriano</strong></a></p>
+            <p>Ⓒ 2020 - Sex Shop Todxs - Todos os direitos reservados | Desenvolvido por <a href="https://tarcisiocipriano.com/"><strong>Tarcísio Cipriano</strong></a></p>
             <!-- to-do: remove the get_theme_mode later -->
             <!-- <p><?php echo get_theme_mod( 'set_copyright', 'Copyright X - All rights reserved' ); ?></p> -->
           </div>

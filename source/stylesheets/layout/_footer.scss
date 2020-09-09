@@ -1,7 +1,17 @@
 .footer {
-  background-color: black;
+  background-color: $purple400;
+  color: #fff;
+
+  a {
+    color: #fff;
+  }
+
   p {
     margin: 0;
     padding: 20px 0;
+  }
+
+  .copyright {
+    background-color: $purple500;
   }
 }

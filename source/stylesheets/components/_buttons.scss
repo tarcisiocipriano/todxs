@@ -19,15 +19,8 @@
   &.loading {
     opacity: 1;
 
-    padding: 10px 0;
     &::after {
       content: "\e031";
-      padding-right: 0;
-    }
-  }
-  &.added {
-    &::after {
-      content: '';
     }
   }
 }
