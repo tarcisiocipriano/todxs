@@ -1,18 +1,12 @@
 .search-form {
 
-  &__container {
-    display: none;
-    width: 100%;
-  }
-
   display: flex;
-  border: 1px solid #999;
   border-radius: 20px;
   background-color: #fff;
 
   input[type="search"] {
     width: 100%;
-    padding: .5em .8em;
+    padding: .5em 0 .5em .8em;
     background-color: transparent;
     border: none;
     outline: none;

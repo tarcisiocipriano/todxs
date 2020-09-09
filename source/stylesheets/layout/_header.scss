@@ -2,7 +2,10 @@ header {
 
   .navbar-small {
     display: none;
-    background-color: #eeeeee;
+    background-color: $purple500;
+    color: #fff;
+    font-weight: 600;
+
     @include atMedium {
       display: block;
     }
@@ -22,6 +25,7 @@ header {
 
       a {
         padding: 0 .7em !important;
+        color: #fff;
         &:hover, &:focus {
           text-decoration: underline;
         }
@@ -31,9 +35,8 @@ header {
 
   .top-bar {
     transition: .2s;
-    background-color: #fff;
+    background-color: $purple400;
     box-shadow: 0 10px 10px rgba(0, 0, 0, .05);
-
 
     &__logo {
       min-width: 80px;
@@ -44,5 +47,21 @@ header {
         max-width: 150px;
       }
     }
+
+    &__actions {
+      transition: .2s;
+      margin: 0;
+
+      &--right {
+        margin-right: -50px;
+        opacity: 0;
+      }
+
+      &--left {
+        margin-left: -35px;
+        opacity: 0;
+      }
+    }
   }
+
 }

@@ -7,7 +7,7 @@
  * @package Todxs
 */
 ?>
-    <footer>
+    <footer class="footer">
       <section class="footer-widgets">
         <div class="container">
           <div class="row">
@@ -31,19 +31,10 @@
       </section>
       <section class="copyright">
         <div class="container">
-          <div class="row">
-            <div class="copyright-text col-12 col-md-6">
-              <p><?php echo get_theme_mod( 'set_copyright', 'Copyright X - All rights reserved' ); ?></p>
-            </div>
-            <nav class="footer-menu col-12 col-md-6 text-left text-md-right">
-              <?php
-                wp_nav_menu(
-                  array(
-                    'theme_location' => 'todxs_footer_menu'
-                  )
-                );
-              ?>
-            </nav>
+          <div class="copyright-text text-center">
+            <p>Ⓒ 2020 - Sex Shop Todxs - All rights reserved | Design by <a href="https://tarcisiocipriano.com/"><strong>Tarcísio Cipriano</strong></a></p>
+            <!-- to-do: remove the get_theme_mode later -->
+            <!-- <p><?php echo get_theme_mod( 'set_copyright', 'Copyright X - All rights reserved' ); ?></p> -->
           </div>
         </div>
       </section>

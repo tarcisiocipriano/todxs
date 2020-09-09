@@ -12,7 +12,7 @@ function todxs_wc_modify() {
   // open the container and row
   add_action( 'woocommerce_before_main_content', 'todxs_open_container_row', 5 );
   function todxs_open_container_row() {
-    echo '<div class="container shop-content"><div class="row">';
+    echo '<div class="shop-content"><div class="container"><div class="row">';
   }
   
   // remove sidebar
@@ -60,7 +60,7 @@ function todxs_wc_modify() {
   // close the container and row
   add_action( 'woocommerce_after_main_content', 'todxs_close_container_row', 5 );
   function todxs_close_container_row() {
-    echo '</div></div>';
+    echo '</div></div></div>';
   }
   
   /* -------------------- remove shop title -------------------- */

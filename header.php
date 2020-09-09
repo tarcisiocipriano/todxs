@@ -61,29 +61,31 @@
         <div class="container">
 
           <div class="d-flex justify-content-between align-items-center">
-            
-            <h1 class="m-0">
-              <a href="<?php echo home_url( '/' ); ?>">
-                <img class="d-block top-bar__logo" src="<?php echo get_theme_file_uri( "/assets/icons/todxs-logo.svg" ); ?>" alt="" width="150" height="50">
-              </a>
-            </h1>
 
-            <div class="my-3 mx-3 mx-lg-5 w-100"><?php get_search_form(); ?></div>
-
-            <div class="d-flex align-items-center top-bar__actions" >
-              
-              <?php if( class_exists( 'WooCommerce' ) ): ?>
-                <div class="cart mr-3 mr-lg-0">
-                  <a href="<?php echo wc_get_cart_url(); ?>"><span class="cart__icon"></span></a>
-                  <span class="cart__quantity"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-                </div>
-              <?php endif; ?>
-
+            <div id="top-bar__actions--left" class="mr-2 top-bar__actions">
               <div class="button__burger">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
               </div>
+
+            </div>
+
+            <h1>
+              <a href="<?php echo home_url( '/' ); ?>">
+                <img class="d-block top-bar__logo" src="<?php echo get_theme_file_uri( "/assets/icons/todxs-logo-white.svg" ); ?>" alt="" width="150" height="50">
+              </a>
+            </h1>
+
+            <div class="my-3 ml-3 mr-3 mx-lg-5 w-100 search-form__container"><?php get_search_form(); ?></div>
+
+            <div id="top-bar__actions--right" class="d-flex align-items-center top-bar__actions" >
+              <?php if( class_exists( 'WooCommerce' ) ): ?>
+                <div class="cart">
+                  <a href="<?php echo wc_get_cart_url(); ?>"><span class="cart__icon"></span></a>
+                  <span class="cart__quantity"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                </div>
+              <?php endif; ?>
             </div>
 
           </div>

@@ -1,9 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 8 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-    <g transform="matrix(1,0,0,1,-1111.24,-105.745)">
-        <g transform="matrix(0.0136842,0,0,0.0136842,1111.24,105.745)">
-            <path d="M505,442.7L405.3,343C400.8,338.5 394.7,336 388.3,336L372,336C399.6,300.7 416,256.3 416,208C416,93.1 322.9,0 208,0C93.1,0 0,93.1 0,208C0,322.9 93.1,416 208,416C256.3,416 300.7,399.6 336,372L336,388.3C336,394.7 338.5,400.8 343,405.3L442.7,505C452.1,514.4 467.3,514.4 476.6,505L504.9,476.7C514.3,467.3 514.3,452.1 505,442.7ZM208,336C137.3,336 80,278.8 80,208C80,137.3 137.2,80 208,80C278.7,80 336,137.2 336,208C336,278.7 278.8,336 208,336Z" style="fill-rule:nonzero;"/>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns:serif="http://www.serif.com/"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 792"
+	 style="enable-background:new 0 0 612 792;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#8363AF;}
+</style>
+<g transform="matrix(1,0,0,1,-1111.24,-105.745)">
+	<g transform="matrix(0.0136842,0,0,0.0136842,1111.24,105.745)">
+		<path class="st0" d="M41412.1,40444.1l-7627.2-7627.2c-344.3-344.3-810.9-535.5-1300.5-535.5h-1247
+			c2111.4-2700.5,3366.1-6097.1,3366.1-9792.1c0-8790-7122.3-15912.2-15912.2-15912.2S2779,13699.3,2779,22489.3
+			s7122.3,15912.2,15912.2,15912.2c3695,0,7091.7-1254.6,9792.1-3366v1247c0,489.6,191.3,956.3,535.5,1300.5l7627.2,7627.2
+			c719.1,719.1,1881.9,719.1,2593.4,0l2165-2165C42123.6,42326,42123.6,41163.2,41412.1,40444.1z M18691.3,32281.4
+			c-5408.6,0-9792.1-4375.9-9792.1-9792.1c0-5408.6,4375.9-9792.1,9792.1-9792.1c5408.6,0,9792.1,4375.9,9792.1,9792.1
+			C28483.4,27897.9,24107.5,32281.4,18691.3,32281.4z"/>
+	</g>
+</g>
 </svg>
