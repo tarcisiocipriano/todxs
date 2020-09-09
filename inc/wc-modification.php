@@ -18,7 +18,7 @@ function todxs_wc_modify() {
   // remove sidebar
   remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar' );
 
-  if ( is_shop() ) {
+  if ( is_shop() || is_product_category() ) {
 
     // open the col for the sidebar
     add_action( 'woocommerce_before_main_content', 'todxs_open_sidebar_tags', 6 );
@@ -41,7 +41,7 @@ function todxs_wc_modify() {
   // open the col for the shop
   add_action( 'woocommerce_before_main_content', 'todxs_open_shop_tags', 9 );
   function todxs_open_shop_tags() {
-    if ( is_shop() ) {
+    if ( is_shop() || is_product_category()) {
       echo '<div class="col-md-8 col-lg-9 order-1 order-md-2">';
     } else {
       echo '<div class="col">';
