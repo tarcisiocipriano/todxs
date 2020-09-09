@@ -21,43 +21,44 @@
 
   <div id="page" class="site">
     <header>
-
-      <section class="navbar-small py-2" >
-        <div class="container">
-          <div class="row">
-            <div class="col-6">
-              <span>(81) 8222-0235</span>
-            </div>
-            <?php if( class_exists( 'WooCommerce' ) ): ?>
-            <div class="col-6">
-
-              <div class="navbar-small__menu">
-                <?php endif; wp_nav_menu( array(
-                  'theme_location' => 'todxs_nav_menu',
-                  'container'      => false ));
-                ?>
-                <ul>
-                  <?php if( is_user_logged_in() ): ?>
-                  <li>
-                    <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>" class="nav-link">Minha Conta</a>
-                  </li>
-                  <li>
-                    <a href="<?php echo esc_url( wp_logout_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ) ); ?>" class="nav-link">Sair</a>
-                  </li>
-                  <?php else: ?>
-                  <li>
-                    <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>" class="nav-link">Entrar / Criar conta</a>
-                  </li>
-                  <?php endif; ?>
-                </ul>
+      
+      <div class="top-bar fixed-top">
+        
+        <div class="top-bar__small" >
+          <div class="container">
+            <div class="row">
+              <div class="col-6">
+                <span>(81) 8222-0235</span>
               </div>
-
+              <?php if( class_exists( 'WooCommerce' ) ): ?>
+              <div class="col-6">
+  
+                <div class="top-bar__small__menu">
+                  <?php endif; wp_nav_menu( array(
+                    'theme_location' => 'todxs_nav_menu',
+                    'container'      => false ));
+                  ?>
+                  <ul>
+                    <?php if( is_user_logged_in() ): ?>
+                    <li>
+                      <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>" class="nav-link">Minha Conta</a>
+                    </li>
+                    <li>
+                      <a href="<?php echo esc_url( wp_logout_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ) ); ?>" class="nav-link">Sair</a>
+                    </li>
+                    <?php else: ?>
+                    <li>
+                      <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>" class="nav-link">Entrar / Criar conta</a>
+                    </li>
+                    <?php endif; ?>
+                  </ul>
+                </div>
+  
+              </div>
             </div>
           </div>
         </div>
-      </section>
 
-      <section class="top-bar">
         <div class="container">
 
           <div class="d-flex justify-content-between align-items-center">
@@ -89,8 +90,6 @@
             </div>
 
           </div>
-
-          
         </div> <!-- /container -->
         <div class="category__menu">
           <nav class="container">
@@ -128,7 +127,7 @@
             </ul>
           </nav>
         </div>
-      </section>
+      </div>
     </header>
 
     
