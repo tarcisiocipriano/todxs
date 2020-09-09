@@ -47,8 +47,7 @@ function todxs_config() {
   // register menus
   register_nav_menus(
     array(
-      'todxs_main_menu'   => 'Todxs Main Menu',
-      'todxs_footer_menu' => 'Todxs Footer Menu'
+      'todxs_nav_menu'   => 'Todxs Nav Menu'
     )
   );
 

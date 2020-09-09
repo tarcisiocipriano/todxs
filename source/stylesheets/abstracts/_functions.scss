@@ -1,6 +1,3 @@
-$purpleLight: lighten( $purple, 10% );
-$purpleDark: darken( $purple, 10% );
-
 .hiddeOnlySmall {
   @include untilSmall {
     display: none !important;

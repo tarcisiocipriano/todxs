@@ -1,1 +1,29 @@
-$purple: #754c9c;
+$red500: #FF595E;
+$red300: lighten( $red500, 20% );
+$red400: lighten( $red500, 10% );
+$red600: darken( $red500, 10% );
+$red700: darken( $red500, 20% );
+
+$yellow500: #FFCA3A;
+$yellow300: lighten( $yellow500, 20% );
+$yellow400: lighten( $yellow500, 10% );
+$yellow600: darken( $yellow500, 10% );
+$yellow700: darken( $yellow500, 20% );
+
+$green500: #8AC926;
+$green300: lighten( $green500, 20% );
+$green400: lighten( $green500, 10% );
+$green600: darken( $green500, 10% );
+$green700: darken( $green500, 20% );
+
+$blue500: #1982C4;
+$blue300: lighten( $blue500, 20% );
+$blue400: lighten( $blue500, 10% );
+$blue600: darken( $blue500, 10% );
+$blue700: darken( $blue500, 20% );
+
+$purple500: #6A4C93;
+$purple300: lighten( $purple500, 20% );
+$purple400: lighten( $purple500, 10% );
+$purple600: darken( $purple500, 10% );
+$purple700: darken( $purple500, 20% );

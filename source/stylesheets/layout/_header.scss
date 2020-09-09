@@ -1,16 +1,39 @@
 header {
-  background-color: #fff;
 
-  .navbar--small {
+  .navbar-small {
     display: none;
+    background-color: #eeeeee;
     @include atMedium {
       display: block;
+    }
+    &__menu {
+      display: flex;
+      justify-content: flex-end;
+
+      ul {
+        display: flex;
+        list-style-type: none;
+      }
+      
+      ul, li, a {
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        padding: 0 .7em !important;
+        &:hover, &:focus {
+          text-decoration: underline;
+        }
+      }
     }
   }
 
   .top-bar {
     transition: .2s;
     background-color: #fff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .05);
+
 
     &__logo {
       min-width: 80px;
