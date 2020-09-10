@@ -14,11 +14,13 @@ var topBar = $('.top-bar');
 var topBarSmall = $('.top-bar__small');
 $('body').css('padding-top', topBar.height());
 $(window).scroll(function() {
-  $('body').css('padding-top', topBar.height());
-  if($(window).scrollTop() > 40) {
-    topBar.addClass('top-bar--dense');
-  } else {
-    topBar.removeClass('top-bar--dense');
+  if($(window).width() > 990) {
+    $('body').css('padding-top', topBar.height());
+    if($(window).scrollTop() > 40) {
+      topBar.addClass('top-bar--dense');
+    } else {
+      topBar.removeClass('top-bar--dense');
+    }
   }
 });
 
