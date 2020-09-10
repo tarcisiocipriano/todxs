@@ -1,49 +1,84 @@
-// button primary
-.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
-  background-color: $purple500;
-  border: none;
-  color: white;
+@mixin button-base($background, $background-focus, $foreground, $foreground-focus, $border) {
+  min-height: 40px;
+  max-height: 40px;
+  background-color: $background;
+  border: $border;
+  outline: none;
+  
+  color: $foreground;
+  line-height: 1.5;
+
+  &:hover, &:focus {
+    background-color: $background-focus;
+    color: $foreground-focus;
+  }
+  
+  transition: background-color .2s;
 }
 
-// button outline
-.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
-  background-color: white;
-  border: 2px solid $purple500;
-  color: $purple500;
+// .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button
+
+// button cart
+.woocommerce a.button {
+  @include button-base($green500, $green600, #fff, #fff, none);
+  
+  width: 100%;
   text-align: center;
-  transition: background-color .2s;
-  &:hover, &:focus {
-    background-color: $purple100;
-    color: $purple500;
-  }
+
   &.loading {
     opacity: 1;
-
     &::after {
       content: "\e031";
     }
   }
 }
 
-.woocommerce a.button {
-  width: 100%;
+
+// button cuppon
+.woocommerce button.button {
+  @include button-base(#fff, #f5f5f5, $blue300, $blue300, 2px solid $blue300);
+  line-height: 1.1;
 }
 
-// button on category page
-.archive, .tax-product_cat {
-  a.button {
-    background-color: $green500;
-    color: #fff;
-    border: none;
-    width: 100%;
+// button proceed to checkout
+.woocommerce a.button.alt {
+  @include button-base($green500, $green600, #fff, #fff, none);
 
-    &:hover, &:focus {
-      background-color: $green600;
-      color: #fff;
-    }
+  min-height: 60px;
+  max-height: 60px;
+  line-height: 1;
+  
+  border: none;
+  color: white;
+}
+
+// .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt
+// button finish checkout
+.woocommerce button.button.alt {
+  @include button-base($green500, $green600, #fff, #fff, none);
+}
+
+// payment page
+.woocommerce-order-pay {
+
+  // button "pagar com mercado pago"
+  .woocommerce a.button.alt {
+    min-height: 40px;
+    max-height: 40px;
+    line-height: 1;
+    width: auto;
+    line-height: 1.4;
+  }
+  
+  // button "cancelar e limpar carrinho" 
+  .woocommerce .button.cancel {
+    @include button-base(#fff, #f5f5f5, $blue300, $blue300, 2px solid $blue300);
+    width: auto;
+    line-height: 1.1;
   }
 }
 
+// button burger
 .button {
 
   &__burger {

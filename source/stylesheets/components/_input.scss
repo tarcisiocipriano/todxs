@@ -1,0 +1,17 @@
+.input-text {
+  font-size: 1rem;
+  padding: .5em;
+  border: 1px solid gray;
+  border-radius: 4px;
+  min-height: 40px;
+  outline: none;
+
+  &:focus {
+    border: 2px solid $purple400 !important;
+    box-shadow: 0 0 0 4px $purple100;
+  }
+}
+
+.woocommerce form .form-row {
+  display: block;
+}

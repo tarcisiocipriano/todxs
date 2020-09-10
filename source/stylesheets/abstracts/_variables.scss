@@ -11,12 +11,16 @@ $yellow600: darken( $yellow500, 10% );
 $yellow700: darken( $yellow500, 20% );
 
 $green500: #8AC926;
+$green100: lighten( $green500, 40% );
+$green200: lighten( $green500, 30% );
 $green300: lighten( $green500, 20% );
 $green400: lighten( $green500, 10% );
 $green600: darken( $green500, 10% );
 $green700: darken( $green500, 20% );
 
 $blue500: #1982C4;
+$blue100: lighten( $blue500, 40% );
+$blue200: lighten( $blue500, 30% );
 $blue300: lighten( $blue500, 20% );
 $blue400: lighten( $blue500, 10% );
 $blue600: darken( $blue500, 10% );
