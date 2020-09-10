@@ -6,6 +6,9 @@
   background-color: white;
   border-radius: 8px;
   position: relative;
+
+  text-align: left;
+
   transition: box-shadow .2s;
 
   &:hover, &:focus {
@@ -37,35 +40,44 @@
 }
 
 // product price
-.woocommerce ul.products li.product .price {
+#price-base {
   color: $green500;
   font-size: 1.25rem;
   font-weight: 700;
-  text-align: center;
-
-  & del {
-    margin-right: .5em;
-    font-size: 1rem;
-    font-weight: 400;
-    color: $blue500;
-  }
+  text-decoration: none;
+}
+#price-del {
+  color: $red500;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
-// .woocommerce div.product p.price del, 
-// .woocommerce div.product span.price del,
-// .woocommerce ul.products li.product .price del .woocommerce-Price-amount{
-//   color: #000;
-//   font-size: 20px;
-//   font-weight: 500;
-// }
+// product price - list of products
+.woocommerce ul.products li.product .price,
+.woocommerce ul.products li.product .price ins {
+  @extend #price-base;
+  text-align: center;
+}
+// product price - list of products
+.woocommerce div.product p.price,
+.woocommerce div.product p.price ins {
+  @extend #price-base;
+  font-size: 2rem;
+}
 
-// .woocommerce div.product p.price ins, 
-// .woocommerce div.product span.price ins, 
-// .woocommerce-Price-amount {
-//   font-size: 25px;
-//   color: #000;
-//   font-weight: 700;
-// }
+// product price - list of products del
+.woocommerce ul.products li.product .price del {
+  @extend #price-del;
+  margin-right: .5em;
+}
+// product price - single products del
+.woocommerce div.product p.price del {
+  @extend #price-del;
+  margin-right: .5em;
+  font-size: 1.5rem;
+}
+
+
 
 // product offert
 .woocommerce ul.products li.product .onsale {
@@ -87,31 +99,6 @@
   }
 }
 
-// .woocommerce ul.products li.product .price del
-
-// .woocommerce ul.products li.product .price ins
-
-
-
-
 .product_meta > span{
   display: block;
 }
-
-
-
-
-// .woocommerce div.product .woocommerce-tabs ul.tabs{
-//   padding: 0;
-
-// }
-
-// .woocommerce div.product .woocommerce-tabs ul.tabs li{
-//   border-radius: 0;
-//   margin: 0;
-// }
-
-// .woocommerce div.product .woocommerce-tabs ul.tabs li::after, 
-// .woocommerce div.product .woocommerce-tabs ul.tabs li::before{
-//   content: none;
-// }

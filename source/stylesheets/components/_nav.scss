@@ -7,16 +7,15 @@
   }
 
   width: 100%;
-  margin: 0 -10px 0 0;
+  padding: 16px 0;
 
+  border-top: 1px solid $yellow500;
 }
 
 // li
 .woocommerce div.product .woocommerce-tabs ul.tabs li {
-  // margin: 0;
   background-color: transparent;
   border: none;
-
   
   &::before, &::after {
     border: none;
@@ -33,7 +32,7 @@
 // li active
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
   background-color: transparent;
-  color: $purple500;
+  color: $purple400;
 
   a {
     font-weight: 700;

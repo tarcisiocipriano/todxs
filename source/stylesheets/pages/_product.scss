@@ -1,0 +1,37 @@
+// button buy
+.woocommerce button.button.alt {
+  margin-left: 12px;
+}
+
+/*
+  align intems in small
+*/
+.woocommerce div.product div.summary {
+  @include untilSmall {
+    text-align: center;
+  }
+}
+.woocommerce div.product form.cart {
+  @include untilSmall {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/*
+  make the description appear only in large scales
+*/
+.woocommerce div.product .woocommerce-tabs, .woocommerce-page div.product .woocommerce-tabs {
+  h2 {
+    display: none;
+
+    @include atMedium {
+      display: block;
+    }
+  }
+}
+
+// aditional information table
+.woocommerce table.shop_attributes tr {
+  background-color: #fff;
+}
