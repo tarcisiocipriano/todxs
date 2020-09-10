@@ -1,0 +1,18 @@
+.woocommerce table.shop_table {
+  border-collapse: collapse;
+}
+
+// table head
+.woocommerce table.shop_table thead {
+  background-color: $purple400;
+  color: #fff;
+}
+
+.woocommerce table.shop_table tbody,
+.woocommerce table.shop_table tfoot{
+  background-color: #fff;
+  
+  tr td {
+    padding: 20px;
+  }
+}

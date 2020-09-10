@@ -1,3 +1,20 @@
-.woocommerce-cart table.cart td.actions .coupon .input-text{
+// cuppon input
+.woocommerce-cart table.cart td.actions .coupon .input-text {
   width: 150px;
+  margin-right: 12px;
 }
+
+.cart_totals {
+
+  .cart-subtotal {
+    background-color: $purple400;
+    color: #fff;
+  }
+
+  th {
+    padding: 20px !important;
+  }
+}
+
+// .woocommerce .quantity .qty {
+// }
