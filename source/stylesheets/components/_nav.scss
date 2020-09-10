@@ -1,0 +1,41 @@
+// ul
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+  display: flex;
+  justify-content: center;
+  &::before {
+    border: none;
+  }
+
+  width: 100%;
+  margin: 0 -10px 0 0;
+
+}
+
+// li
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+  // margin: 0;
+  background-color: transparent;
+  border: none;
+
+  
+  &::before, &::after {
+    border: none;
+    content: none;
+  }
+  
+  a {
+    color: gray;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+}
+
+// li active
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+  background-color: transparent;
+  color: $purple500;
+
+  a {
+    font-weight: 700;
+  }
+}
