@@ -1,0 +1,19 @@
+// payment page
+.woocommerce-order-pay {
+
+  // button "pagar com mercado pago"
+  .woocommerce a.button.alt {
+    min-height: 40px;
+    max-height: 40px;
+    line-height: 1;
+    width: auto;
+    line-height: 1.4;
+  }
+  
+  // button "cancelar e limpar carrinho" 
+  .woocommerce .button.cancel {
+    @include button-base(#fff, #f5f5f5, $blue300, $blue300, 2px solid $blue300);
+    width: auto;
+    line-height: 1.1;
+  }
+}

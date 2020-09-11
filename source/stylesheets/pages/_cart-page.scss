@@ -4,6 +4,15 @@
   margin-right: 12px;
 }
 
+.coupon button.button {
+  border-color: $blue300;
+  color: $blue300;
+  
+  &:hover, &:focus {
+    color: $blue300;
+  }
+}
+
 .cart_totals {
 
   .cart-subtotal {
