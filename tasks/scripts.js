@@ -1,17 +1,5 @@
-const { src, dest } = require('gulp'),
-$     = require('gulp-load-plugins')(),
-bSync = require('browser-sync').create()
-
-function css() {
-  return src('source/stylesheets/**/*.scss')
-    .pipe($.sourcemaps.init({ loadMaps: true }))
-    .pipe($.sass().on('error', $.sass.logError))
-    .pipe($.autoprefixer({ overrideBrowserslist: ['last 2 versions'] }))
-    .pipe($.cssnano())
-    .pipe($.sourcemaps.write('../maps'))
-    .pipe(dest('./stylesheets'))
-    .pipe(bSync.stream())
-}
+const { src, dest, series } = require('gulp'),
+$     = require('gulp-load-plugins')()
 
 function js() {
   return src('source/scripts/main.js')
@@ -41,4 +29,4 @@ function vendors() {
     .pipe(dest('./scripts'))
 }
 
-module.exports = { css, js, vendors }
+module.exports = series( js, vendors )
