@@ -3,3 +3,5 @@
 /stylesheets
 /scripts
 /assets
+
+/source/stylesheets/vendors/_sprite.scss
