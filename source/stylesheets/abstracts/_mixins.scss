@@ -9,7 +9,7 @@ $large: 1200px;
 }
 
 @mixin atMedium {
-  @media (min-width: #{$medium}) {
+  @media (min-width: #{$medium + 1}) {
     @content;
   }
 }

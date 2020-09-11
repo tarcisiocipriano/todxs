@@ -95,34 +95,64 @@
           <nav class="container">
             <ul>
               <li>
-                <a href="<?php echo site_url( '/categoria-produto/preservativos' ); ?>">Preservativos</a>
+                <a href="<?php echo site_url( '/categoria-produto/preservativos' ); ?>">
+                  <span class="icon-nav icon-nav--preservativos"></span>
+                  Preservativos
+                </a>
               </li>
               <li>
-                <a href="<?php echo site_url( '/categoria-produto/cosmeticos' ); ?>">Cosméticos</a>
+                <a href="<?php echo site_url( '/categoria-produto/cosmeticos' ); ?>">
+                  <span class="icon-nav icon-nav--cosmeticos"></span>
+                  Cosméticos
+                </a>
               </li>
               <li>
-                <a href="<?php echo site_url( '/categoria-produto/lubrificantes' ); ?>">Lubrificantes</a>
+                <a href="<?php echo site_url( '/categoria-produto/lubrificantes' ); ?>">
+                  <span class="icon-nav icon-nav--lubrificantes"></span>
+                  Lubrificantes
+                </a>
               </li>
               <li>
-                <a href="<?php echo site_url( '/categoria-produto/higiene' ); ?>">Higiene</a>
+                <a href="<?php echo site_url( '/categoria-produto/higiene' ); ?>">
+                  <span class="icon-nav icon-nav--higiene"></span>
+                  Higiene
+                </a>
               </li>
               <li>
-                <a href="<?php echo site_url( '/categoria-produto/vibradores' ); ?>">Vibradores</a>
+                <a href="<?php echo site_url( '/categoria-produto/vibradores' ); ?>">
+                  <span class="icon-nav icon-nav--vibradores"></span>
+                  Vibradores
+                </a>
               </li>
               <li>
-                <a href="<?php echo site_url( '/categoria-produto/proteses-e-cintas' ); ?>">Próteses e Cintas</a>
+                <a href="<?php echo site_url( '/categoria-produto/proteses-e-cintas' ); ?>">
+                  <span class="icon-nav icon-nav--proteses"></span>
+                  Cintas
+                </a>
               </li>
               <li>
-                <a href="<?php echo site_url( '/categoria-produto/plug-anal' ); ?>">Plug Anal</a>
+                <a href="<?php echo site_url( '/categoria-produto/plug-anal' ); ?>">
+                  <span class="icon-nav icon-nav--plug-anal"></span>
+                  Plug Anal
+                </a>
               </li>
               <li>
-                <a href="<?php echo site_url( '/categoria-produto/brincadeiras' ); ?>">Brincadeiras</a>
+                <a href="<?php echo site_url( '/categoria-produto/brincadeiras' ); ?>">
+                  <span class="icon-nav icon-nav--brincadeiras"></span>
+                  Brincadeiras
+                </a>
               </li>
               <li>
-                <a href="<?php echo site_url( '/categoria-produto/acessorios' ); ?>">Acessórios</a>
+                <a href="<?php echo site_url( '/categoria-produto/acessorios' ); ?>">
+                  <span class="icon-nav icon-nav--acessorios"></span>
+                  Acessórios
+                </a>
               </li>
               <li>
-                <a href="<?php echo site_url( '/categoria-produto/linha-sado' ); ?>">Linha Sado</a>
+                <a href="<?php echo site_url( '/categoria-produto/linha-sado' ); ?>">
+                  <span class="icon-nav icon-nav--linha-sado"></span>
+                  Linha Sado
+                </a>
               </li>
             </ul>
           </nav>

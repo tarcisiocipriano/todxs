@@ -13,15 +13,22 @@ $('.slick-carousel').slick({
 var topBar = $('.top-bar');
 var topBarSmall = $('.top-bar__small');
 $('body').css('padding-top', topBar.height());
-$(window).scroll(function() {
-  if($(window).width() > 990) {
-    $('body').css('padding-top', topBar.height());
-    if($(window).scrollTop() > 40) {
-      topBar.addClass('top-bar--dense');
-    } else {
-      topBar.removeClass('top-bar--dense');
-    }
+
+function resizeNavBar() {
+  $('body').css('padding-top', topBar.height());
+  if($(window).width() > 990 && $(window).scrollTop() > 40) {
+    topBar.addClass('top-bar--dense');
+  } else {
+    topBar.removeClass('top-bar--dense');
   }
+}
+
+$(window).scroll(function() {
+  resizeNavBar();
+});
+
+$(window).resize(function() {
+  resizeNavBar();
 });
 
 // open and close menu

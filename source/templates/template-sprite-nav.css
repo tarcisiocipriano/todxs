@@ -1,0 +1,16 @@
+/* sprites template */
+
+{{#shapes}}
+  {{#first}}
+    .icon-nav {
+      background-image: url('../assets/icons/sprites/{{{sprite}}}');
+      display: inline-block;
+    }
+  {{/first}}
+
+ .icon-nav--{{base}} {
+   width: {{width.outer}}px;
+   height: {{height.outer}}px;
+   background-position: {{position.relative.xy}};
+ }
+{{/shapes}}

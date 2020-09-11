@@ -32,6 +32,33 @@ function images() {
     .pipe(gulp.dest("./assets/images"))
 }
 
+/* ---------- start sprites ---------- */
+function sprites() {
+  return gulp
+    .src("source/icons/nav-icons/*.svg")
+    .pipe($.svgSprite({ mode: { css: { sprite: "sprite-nav.svg", render: { css: { template: "source/templates/template-sprite-nav.css" },},},},}))
+    .pipe(gulp.dest("temp"))
+}
+
+function moveSpritesCss() {
+  return gulp
+    .src("temp/css/*.css")
+    .pipe($.rename("_sprite.scss"))
+    .pipe(gulp.dest("source/stylesheets/vendors"))
+}
+
+function moveSpritesSvg() {
+  return gulp
+    .src("temp/css/*.svg")
+    .pipe(gulp.dest("assets/icons/sprites"))
+}
+
+function cleanTemp(done) {
+  del("temp");
+  done();
+}
+/* ---------- end sprites ---------- */
+
 function css() {
   return gulp
     .src("source/stylesheets/**/*.scss")
@@ -44,7 +71,7 @@ function css() {
     .pipe(browserSync.stream())
 }
 
-function Vendors() {
+function vendors() {
   return gulp
     .src([
       "node_modules/jquery/dist/jquery.min.js",
@@ -82,7 +109,7 @@ function clean(done) {
   done()
 }
 
-function watch_files() {
+function watch() {
   gulp.watch("source/data/**/*", data)
   gulp.watch("source/files/**/*", files)
   gulp.watch("source/icons/**/*", icons)
@@ -109,7 +136,7 @@ function build(done) {
   fonts()
   css()
   js()
-  Vendors()
+  vendors()
   done()
 }
 
@@ -125,7 +152,22 @@ function imagemin(done) {
 
 exports.clean = clean
 exports.build = build
-exports.watch = watch_files
-exports.default = gulp.series(clean, build, watch_files)
+exports.watch = watch
 exports.imagemin = imagemin
 exports.imageclean = imageclean
+
+exports.default = gulp.series(
+  clean,
+  sprites,
+  moveSpritesCss,
+  moveSpritesSvg,
+  cleanTemp,
+  data,
+  files,
+  icons,
+  fonts,
+  css,
+  js,
+  vendors,
+  watch
+)
