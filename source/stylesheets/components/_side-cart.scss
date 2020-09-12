@@ -1,0 +1,95 @@
+// container
+// .woofc-area.woofc-effect-01 {
+//   max-width: 600px;
+// }
+
+// scren backdrop
+body.woofc-body-show .woofc-overlay {
+  background-color: rgba(0, 0, 0, .5);
+}
+
+// container backdrop
+.woofc-area.woofc-area-loading:after {
+  transition:  .2s;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+// container body
+.woofc-area.woofc-style-01 .woofc-area-mid {
+  overflow: visible;
+}
+
+// prevent the itens to offset position on hover
+.woofc-area.woofc-style-01 .woofc-area-mid .woofc-item {
+  &:hover {
+    .woofc-item-inner {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  // truncate content
+  .woofc-item-inner .woofc-item-info .woofc-item-title {
+    max-width: 150px;
+
+    color: $black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// buttons plus and minus
+.woofc-area.woofc-style-01 .woofc-area-mid .woofc-item .woofc-item-inner .woofc-item-qty .woofc-item-qty-inner {
+  .woofc-item-qty-minus, .woofc-item-qty-plus {
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.8;
+  }
+
+  .woofc-item-qty-minus {
+    color: $red500;
+  }
+  .woofc-item-qty-plus {
+    color: $green500;
+  }
+}
+
+// remove button
+.woofc-area.woofc-style-01 .woofc-area-mid .woofc-item  {
+  .woofc-item-inner .woofc-item-remove {
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .5);
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0, 0, 0) translateX(-30%) translateY(-30%);
+    top: 0;
+    right: auto;
+    left: 0;
+    color: $red500;
+  }
+  &:hover {
+    .woofc-item-inner .woofc-item-remove {
+      transform: translate3d(0, 0, 0) translateX(-30%) translateY(-30%);
+      top: 0;
+    }
+  }
+}
+
+// loading
+.woofc-area.woofc-area-loading {
+  &:before {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-image: url("../assets/icons/hands.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: none;
+    animation: none;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
