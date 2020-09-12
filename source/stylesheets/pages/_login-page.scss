@@ -34,7 +34,9 @@ p.woocommerce-LostPassword.lost_password {
   text-align: center;
 }
 
+// sign up button
 .woocommerce button.woocommerce-form-register__submit {
+  width: 100%;
   background-color: $purple400;
   border: none;
   color: #fff;

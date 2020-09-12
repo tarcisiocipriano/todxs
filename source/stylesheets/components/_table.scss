@@ -9,10 +9,20 @@
 }
 
 .woocommerce table.shop_table tbody,
-.woocommerce table.shop_table tfoot{
+.woocommerce table.shop_table tfoot {
   background-color: #fff;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .05);
   
   tr td {
     padding: 20px;
+  }
+}
+
+/*
+  make the table row divisions more clear in small devices
+*/
+.woocommerce table.shop_table_responsive tr, .woocommerce-page table.shop_table_responsive tr {
+  @include untilSmall {
+    border-bottom: 1px solid #ccc;
   }
 }

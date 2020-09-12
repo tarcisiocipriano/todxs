@@ -1,9 +1,11 @@
-// cuppon input
+// coupon input
 .woocommerce-cart table.cart td.actions .coupon .input-text {
-  width: 150px;
-  margin-right: 12px;
+  @include atSmall {
+    width: 150px;
+    margin-right: 12px;
+  }
 }
-
+// coupon button
 .coupon button.button {
   border-color: $blue300;
   color: $blue300;
@@ -13,14 +15,49 @@
   }
 }
 
+// cart totals container
 .cart_totals {
 
+  // header
   .cart-subtotal {
     background-color: $purple400;
     color: #fff;
   }
-
   th {
     padding: 20px !important;
+  }
+}
+
+/*
+  align quantity input to the right at small devices
+*/
+.woocommerce table.shop_table tbody tr td, .woocommerce table.shop_table tfoot tr td {
+  &.product-quantity {
+    @include untilSmall {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+/*
+  resize the cart totals container at different screen sizes
+*/
+.woocommerce .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals {
+  width: 100%;
+  @include atMedium {
+    width: 60%;
+  }
+  @include atLarge {
+    width: 50%;
+  }
+}
+
+/*
+  fix the color of the cart totals at small devices
+*/
+.woocommerce-cart .cart-collaterals .cart_totals table tr.woocommerce-shipping-totals.shipping td {
+  @include untilSmall {
+    background-color: #fff;
   }
 }

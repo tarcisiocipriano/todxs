@@ -3,7 +3,7 @@ $medium: 991px;
 $large: 1200px;
 
 @mixin atSmall {
-  @media (min-width: #{$small}) {
+  @media (min-width: #{$small + 1}) {
     @content;
   }
 }
@@ -15,7 +15,7 @@ $large: 1200px;
 }
 
 @mixin atLarge {
-  @media (min-width: #{$large}) {
+  @media (min-width: #{$large + 1}) {
     @content;
   }
 }

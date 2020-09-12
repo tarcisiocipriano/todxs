@@ -1,8 +1,3 @@
-// container
-// .woofc-area.woofc-effect-01 {
-//   max-width: 600px;
-// }
-
 // scren backdrop
 body.woofc-body-show .woofc-overlay {
   background-color: rgba(0, 0, 0, .5);
@@ -14,9 +9,20 @@ body.woofc-body-show .woofc-overlay {
   background-color: rgba(0, 0, 0, .5);
 }
 
+// container
+.woofc-area.woofc-effect-01 {
+  max-width: 100%;
+  height: 100%;
+
+  @include atSmall {
+    max-width: 400px;
+  }
+}
+
 // container body
 .woofc-area.woofc-style-01 .woofc-area-mid {
-  overflow: visible;
+  padding-top: 16px;
+  overflow-y: scroll;
 }
 
 // prevent the itens to offset position on hover
@@ -56,7 +62,7 @@ body.woofc-body-show .woofc-overlay {
   }
 }
 
-// remove button
+// button remove
 .woofc-area.woofc-style-01 .woofc-area-mid .woofc-item  {
   .woofc-item-inner .woofc-item-remove {
     background-color: #fff;
@@ -68,7 +74,8 @@ body.woofc-body-show .woofc-overlay {
     top: 0;
     right: auto;
     left: 0;
-    color: $red500;
+    color: #999;
+    overflow: hidden;
   }
   &:hover {
     .woofc-item-inner .woofc-item-remove {
@@ -91,5 +98,38 @@ body.woofc-body-show .woofc-overlay {
     transition: none;
     animation: none;
     transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+/*
+  fix the buttons vertical alignment on small devices
+*/
+.woofc-area.woofc-style-01 .woofc-area-bot .woofc-action .woofc-action-inner {
+  @include untilSmall {
+    display: block;
+    overflow: hidden;
+
+    div {
+      width: 100%;
+      margin: 0;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+.woofc-area.woofc-style-01 .woofc-area-bot .woofc-action {
+  @include untilSmall {
+    padding: 15px 20px 0 20px;
+  }
+}
+
+/*
+  fix the content padding to not break small devices
+*/
+.woofc-area.woofc-style-01 .woofc-area-mid .woofc-item .woofc-item-inner {
+  @media only screen and (max-width: 768px) {
+    padding: 10px 10px 10px 10px;
   }
 }
