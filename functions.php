@@ -75,91 +75,15 @@ function todxs_config() {
 add_action( 'after_setup_theme', 'todxs_config', 0 );
 
 // add new post types
-function todxs_post_types() {
-  register_post_type('carousel', array(
-    'public'    => true,
-    'labels'    => array(
-      'name'          => 'Carrossel',
-      'add_new_item'  => 'Adicionar novo carrossel',
-      'edit_item'     => 'Editar carrossel',
-      'all_items'     => 'Todos os carrosséis',
-      'singular_name' => 'Carrossel'
-    ),
-    'menu_icon' => 'dashicons-slides'
-  ));
-}
-add_action( 'init', 'todxs_post_types' );
+require_once get_template_directory() . '/inc/post-types.php';
 
-/**
- * only modify wc files if woocommerce is activated
- */ 
+// only modify wc files if woocommerce is activated
 if ( class_exists( 'WooCommerce' ) ) {
   require get_template_directory() . '/inc/wc-modification.php';
 }
 
-/**
- * Show cart contents / total Ajax
- */
-add_filter( 'woocommerce_add_to_cart_fragments', 'todxs_woocommerce_header_add_to_cart_fragment' );
-
-function todxs_woocommerce_header_add_to_cart_fragment( $fragments ) {
-	global $woocommerce;
-
-	ob_start();
-
-  ?>
-  <span class="cart__quantity"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-	<?php
-	$fragments['span.cart__quantity'] = ob_get_clean();
-	return $fragments;
-}
+// Show cart contents / total Ajax
+require_once get_template_directory() . '/inc/update-cart-count.php';
 
 // register sidebars
-function todxs_sidebars() {
-  register_sidebar(array(
-    'name'          => 'Todxs Main Sidebar',
-    'id'            => 'todxs-sidebar-1',
-    'description'   => 'Drag and drop your widgets here',
-    'before_widget' => '<div id="%1$s" class="widget %2$s widget-wrapper">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h4 class="widget-title">',
-    'after_title'   => '</h4>'
-  ));
-  register_sidebar(array(
-    'name'          => 'Shop Sidebar',
-    'id'            => 'todxs-sidebar-shop',
-    'description'   => 'Drag and drop your WooCommerce widgets here',
-    'before_widget' => '<div id="%1$s" class="widget %2$s widget-wrapper">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h4 class="widget-title">',
-    'after_title'   => '</h4>'
-  ));
-  register_sidebar(array(
-    'name'          => 'Footer Sidebar 1',
-    'id'            => 'todxs-sidebar-footer-1',
-    'description'   => 'Drag and drop your widgets here',
-    'before_widget' => '<div id="%1$s" class="widget %2$s widget-wrapper">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h4 class="widget-title">',
-    'after_title'   => '</h4>'
-  ));
-  register_sidebar(array(
-    'name'          => 'Footer Sidebar 2',
-    'id'            => 'todxs-sidebar-footer-2',
-    'description'   => 'Drag and drop your widgets here',
-    'before_widget' => '<div id="%1$s" class="widget %2$s widget-wrapper">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h4 class="widget-title">',
-    'after_title'   => '</h4>'
-  ));
-  register_sidebar(array(
-    'name'          => 'Footer Sidebar 3',
-    'id'            => 'todxs-sidebar-footer-3',
-    'description'   => 'Drag and drop your widgets here',
-    'before_widget' => '<div id="%1$s" class="widget %2$s widget-wrapper">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h4 class="widget-title">',
-    'after_title'   => '</h4>'
-  ));
-}
-add_action( 'widgets_init', 'todxs_sidebars' );
+require_once get_template_directory() . '/inc/sidebars.php';
