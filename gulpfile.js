@@ -4,7 +4,7 @@ del         = require("del"),
 gulp        = require("gulp")
 
 const { data, files, icons, fonts } = require('./tasks/files'),
-      scripts                       = require('./tasks/scripts')
+      { js, vendors}                = require('./tasks/scripts')
       spritesNav                    = require('./tasks/sprites')
 
 function clean(done) {
@@ -35,7 +35,7 @@ function watch() {
   gulp.watch("**/*.php").on("change", browserSync.reload)
   
   gulp.watch("source/stylesheets/**/*.scss", css)
-  gulp.watch("source/scripts/**/*.js", scripts).on("change", browserSync.reload)
+  gulp.watch("source/scripts/**/*.js", js).on("change", browserSync.reload)
 
   browserSync.init({
     browser: "google chrome",
@@ -57,7 +57,8 @@ exports.default = gulp.series(
   icons,
   fonts,
   css,
-  scripts,
+  js,
+  vendors,
   watch
 )
 

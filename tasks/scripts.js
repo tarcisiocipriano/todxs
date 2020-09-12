@@ -29,4 +29,4 @@ function vendors() {
     .pipe(dest('./scripts'))
 }
 
-module.exports = series( js, vendors )
+module.exports = { js, vendors }
