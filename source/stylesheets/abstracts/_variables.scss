@@ -1,34 +1,38 @@
 $red500: #FF595E;
+$red100: lighten( $red500, 30% );
+$red200: lighten( $red500, 25% );
 $red300: lighten( $red500, 20% );
 $red400: lighten( $red500, 10% );
 $red600: darken( $red500, 10% );
 $red700: darken( $red500, 20% );
 
 $yellow500: #FFCA3A;
+$yellow100: lighten( $yellow500, 30% );
+$yellow200: lighten( $yellow500, 25% );
 $yellow300: lighten( $yellow500, 20% );
 $yellow400: lighten( $yellow500, 10% );
 $yellow600: darken( $yellow500, 10% );
 $yellow700: darken( $yellow500, 20% );
 
 $green500: #8AC926;
-$green100: lighten( $green500, 40% );
-$green200: lighten( $green500, 30% );
+$green100: lighten( $green500, 30% );
+$green200: lighten( $green500, 25% );
 $green300: lighten( $green500, 20% );
 $green400: lighten( $green500, 10% );
 $green600: darken( $green500, 10% );
 $green700: darken( $green500, 20% );
 
 $blue500: #1982C4;
-$blue100: lighten( $blue500, 40% );
-$blue200: lighten( $blue500, 30% );
+$blue100: lighten( $blue500, 30% );
+$blue200: lighten( $blue500, 25% );
 $blue300: lighten( $blue500, 20% );
 $blue400: lighten( $blue500, 10% );
 $blue600: darken( $blue500, 10% );
 $blue700: darken( $blue500, 20% );
 
 $purple500: #6A4C93;
-$purple100: lighten( $purple500, 40% );
-$purple200: lighten( $purple500, 30% );
+$purple100: lighten( $purple500, 30% );
+$purple200: lighten( $purple500, 25% );
 $purple300: lighten( $purple500, 20% );
 $purple400: lighten( $purple500, 10% );
 $purple600: darken( $purple500, 10% );
