@@ -5,14 +5,14 @@ $   = require('gulp-load-plugins')(),
 del = require('del')
 
 function sprites() {
-  return src('source/icons/nav-icons/*.svg')
+  return src('source/icons/sprites/*.svg')
     .pipe(
       $.svgSprite({
         mode: {
           css: {
             sprite: 'sprite-nav.svg',
             render: {
-              css: { template: 'source/templates/template-sprite-nav.css' },
+              css: { template: 'source/templates/sprites-template.css' },
             },
           },
         },

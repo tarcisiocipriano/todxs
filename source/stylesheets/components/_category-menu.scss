@@ -65,7 +65,7 @@ $bounce-animation: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     overflow: hidden;
     transition: padding .2s $bounce-animation;
     
-    span.icon-nav {
+    span.icon {
       transition: top .2s $bounce-animation;
       
       position: absolute;
@@ -86,7 +86,7 @@ $bounce-animation: cubic-bezier(0.175, 0.885, 0.32, 1.275);
       a {
         padding-top: 60px;
       }
-      span.icon-nav {
+      span.icon {
         top: 10px;
       }
     }

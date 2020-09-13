@@ -1,84 +1,86 @@
-$top-bar-small-size: 40px;
+.header {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .05);
 
-header {
+  // small header
+  &__small {
+    padding: 8px 0;
+    background-color: $purple500;
+    font-weight: 600;
+    
+    &__contact {
+      li {
+        display: flex;
+        align-items: center;
+      }
+      .icon {
+        margin-right: 8px;
+      }
+      span {
+        color: #fff;
+        font-weight: 600;
+      }
+    }
 
-  .top-bar {
-    transition: margin-top .2s;
+    &__navigation {
+      display: flex;
+      justify-content: flex-end;
+
+      ul {
+        display: flex;
+        align-items: center;
+      }
+
+      li {
+        margin-left: 16px;
+      }
+      
+      a {
+        color: #fff;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__main {
     background-color: $purple400;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, .05);
 
     &__logo {
-      min-width: 80px;
-      max-width: 80px;
-
-      @include atMedium {
-        min-width: 150px;
-        max-width: 150px;
-      }
+      min-width: 150px;
+      max-width: 150px;
+      background-color: #fff;
     }
 
-    &__small {
-      display: none;
-      height: $top-bar-small-size;
-      background-color: $purple500;
-
-      align-items: center;
-
-      color: #fff;
-      font-weight: 600;
-
-      transition: transform .2s;
-  
-      @include atMedium {
-        display: flex;
+    .cart__btn {
+      padding: 0;
+      border: none;
+      position: relative;
+      background-color: transparent;
+    
+      &__icon {
+        display: block;
+        width: 32px;
+        height: 32px;
       }
-      &__menu {
-        display: flex;
-        justify-content: flex-end;
-  
-        ul {
-          display: flex;
-          list-style-type: none;
-        }
-        
-        ul, li, a {
-          margin: 0;
-          padding: 0;
-        }
-  
-        a {
-          padding: 0 .7em !important;
-          color: #fff;
-          &:hover, &:focus {
-            text-decoration: underline;
-          }
-        }
+    
+      &__quantity {
+        width: auto;
+        min-width: 24px;
+        height: 24px;
+        padding: 0 4px;
+
+        background-color: #fff;
+        border: 2px solid $purple400;
+        border-radius: 50%;
+
+        line-height: 1.4;
+        font-weight: 600;
+        color: $purple400;
+
+        position: absolute;
+        top: -8px;
+        right: -10px;
       }
     }
-
-    &--dense {
-      margin-top: -$top-bar-small-size;
-      
-      .top-bar__small {
-        transform: translateY(-$top-bar-small-size);
-      }
-    }
-
-    &__actions {
-      transition: .2s;
-      margin: 0;
-
-      &--right {
-        margin-right: -50px;
-        opacity: 0;
-      }
-
-      &--left {
-        margin-left: -35px;
-        opacity: 0;
-      }
-    }
-
   }
 
 }

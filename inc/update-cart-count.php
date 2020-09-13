@@ -7,9 +7,9 @@ function todxs_woocommerce_header_add_to_cart_fragment( $fragments ) {
 
 	ob_start();
 
-  ?>
-  <span class="cart__quantity"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+	?>
+	<span class="cart__btn__quantity"><?php echo esc_html( WC()->cart->get_cart_contents_count() ); ?></span>
 	<?php
-	$fragments['span.cart__quantity'] = ob_get_clean();
+	$fragments['span.cart__btn__quantity'] = ob_get_clean();
 	return $fragments;
 }

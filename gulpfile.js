@@ -4,8 +4,8 @@ del         = require("del"),
 gulp        = require("gulp")
 
 const { data, files, icons, fonts } = require('./tasks/files'),
-      { js, vendors}                = require('./tasks/scripts')
-      spritesNav                    = require('./tasks/sprites')
+      { js, vendors}                = require('./tasks/scripts'),
+      sprites                       = require('./tasks/sprites')
 
 function clean(done) {
   del("assets")
@@ -31,6 +31,7 @@ function watch() {
   gulp.watch("source/files/**/*", files)
   gulp.watch("source/icons/**/*", icons)
   gulp.watch("source/fonts/**/*", fonts)
+  gulp.watch("source/icons/**/*", sprites)
 
   gulp.watch("**/*.php").on("change", browserSync.reload)
   
@@ -51,7 +52,7 @@ function watch() {
 
 exports.default = gulp.series(
   clean,
-  spritesNav,
+  sprites,
   data,
   files,
   icons,
