@@ -10,52 +10,30 @@ $('.slick-carousel').slick({
 });
 
 // sticky header
-// var topBar = $('.top-bar');
-// var topBarSmall = $('.top-bar__small');
-// $('body').css('padding-top', topBar.height());
+var body = $('body');
+var headerDesktop = $('.header--desktop');
+var headerNavHeight = 40;
 
-// function resizeNavBar() {
-//   $('body').css('padding-top', topBar.height());
-//   if($(window).width() > 990 && $(window).scrollTop() > 40) {
-//     topBar.addClass('top-bar--dense');
-//   } else {
-//     topBar.removeClass('top-bar--dense');
-//   }
-// }
-
-// $(window).scroll(function() {
-//   resizeNavBar();
-// });
-
-// $(window).resize(function() {
-//   resizeNavBar();
-// });
+$(window).scroll(function() {
+  if ($(window).width() >= 992 && $(window).scrollTop() > headerNavHeight) {
+    headerDesktop.addClass('fixed-top').css('margin-top', -headerNavHeight);
+    body.css('margin-top', headerDesktop.height());
+  } else {
+    headerDesktop.removeClass('fixed-top').css('margin-top', 0);
+    body.css('margin-top', 0);
+  }
+});
 
 // open and close menu
-// $('.button__burger').click(function () {
-//   $('.category__menu').toggleClass('category__menu--active');
-//   $('.button__burger').toggleClass('button__burger--toggle');
-// });
+$('.button__burger').click(function () {
+  $('.category__menu').toggleClass('category__menu--active');
+  $('.button__burger').toggleClass('button__burger--toggle');
+});
 
-// $('.category__menu a').click(function() {
-//   $('.category__menu').removeClass('category__menu--active');
-//   $('.button__burger').removeClass('button__burger--toggle');
-// });
-
-// make search form bigger at smaller devices
-// $('.search-field').focusin(function() {
-//   if($(window).width() <= 991) {
-//     $('#top-bar__actions--left').addClass('top-bar__actions--left');
-//     $('#top-bar__actions--right').addClass('top-bar__actions--right');
-//     $('.search-form__container').removeClass('mr-3');
-//   }
-// });
-// $('.search-field').focusout(function() {
-//   $('#top-bar__actions--left').removeClass('top-bar__actions--left');
-//   $('#top-bar__actions--right').removeClass('top-bar__actions--right');
-//   $('.search-form__container').addClass('mr-3');
-// });
-
+$('.category__menu a').click(function() {
+  $('.category__menu').removeClass('category__menu--active');
+  $('.button__burger').removeClass('button__burger--toggle');
+});
 
 // $.each($('.woocommerce span.onsale'), function( index, value ) {
 //   lottie.loadAnimation({

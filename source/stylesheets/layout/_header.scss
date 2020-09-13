@@ -1,8 +1,22 @@
 .header {
   box-shadow: 0 10px 10px rgba(0, 0, 0, .05);
 
-  // small header
-  &__small {
+  &--mobile {
+    display: block;
+    @include atMedium {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+    @include atMedium {
+      display: block;
+    }
+  }
+
+  // nav header
+  &__nav {
     padding: 8px 0;
     background-color: $purple500;
     font-weight: 600;
@@ -45,9 +59,12 @@
     background-color: $purple400;
 
     &__logo {
-      min-width: 150px;
-      max-width: 150px;
-      background-color: #fff;
+      min-width: 80px;
+      max-width: 80px !important;
+      @include atMedium {
+        min-width: 150px;
+        max-width: 150px !important;
+      }
     }
 
     .cart__btn {
@@ -55,6 +72,15 @@
       border: none;
       position: relative;
       background-color: transparent;
+      transform: scale(.75);
+
+      &:focus, &:hover {
+        outline: none;
+      }
+      
+      @include atMedium {
+        transform: scale(1);
+      }
     
       &__icon {
         display: block;
@@ -83,4 +109,31 @@
     }
   }
 
+}
+
+.button__burger {
+  cursor: pointer;
+
+  div {
+    width: 22px;
+    height: 2px;
+    background-color: #fff;
+    margin: 4px 2px;
+  }
+
+  & > div {
+    transition: .2s;
+  }
+  
+  &--toggle {
+    & .line1 {
+      transform: rotate(-45deg) translate(-3px, 6px);
+    }
+    & .line2 {
+      opacity: 0;
+    }
+    & .line3 {
+      transform: rotate(45deg) translate(-3px, -6px);
+    }
+  }
 }

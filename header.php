@@ -22,14 +22,14 @@
 
   <div id="page" class="site">
 
-    <header class="header fixed-top">
+    <header class="header header--desktop">
       
-      <!-- small header -->
-      <div class="header__small" >
+      <!-- nav header -->
+      <div class="header__nav" >
         <div class="container">
           <div class="row">
 
-            <div class="col-6 header__small__contact">
+            <div class="col-6 header__nav__contact">
               <ul>
                 <li>
                   <span class="icon icon--social-whatsapp"></span>
@@ -40,7 +40,7 @@
 
             <!-- navigation -->
             <?php if( class_exists( 'WooCommerce' ) ): ?>
-              <div class="col-6 header__small__navigation">
+              <div class="col-6 header__nav__navigation">
                 <?php wp_nav_menu( array(
                   'theme_location' => 'todxs_nav_menu',
                   'container'      => false ));
@@ -72,7 +72,7 @@
 
           </div> <!-- /row --> 
         </div> <!-- /container -->
-      </div> <!-- /small header -->
+      </div> <!-- /nav header -->
 
       <div class="header__main py-4">
         <div class="container">
@@ -88,7 +88,7 @@
   
             <h1>
               <a href="<?php echo home_url( '/' ); ?>">
-                <img class="d-block header__logo" src="<?php echo get_theme_file_uri( "/assets/icons/todxs-logo-white.svg" ); ?>" alt="" width="150" height="50">
+                <img class="d-block header__main__logo" src="<?php echo get_theme_file_uri( "/assets/icons/todxs-logo-white.svg" ); ?>" alt="" width="150" height="50">
               </a>
             </h1>
   
@@ -175,5 +175,47 @@
       </div> <!-- /category menu -->
 
     </header>
-
     
+    <header class="header header--mobile">
+      
+      <div class="header__main py-2">
+        <div class="container pt-1">
+
+          <div class="row">
+            <div class="col-12">
+              <!-- main header -->
+              <div class="d-flex align-items-center justify-content-between">
+      
+                <div class="button__burger">
+                  <div class="line1"></div>
+                  <div class="line2"></div>
+                  <div class="line3"></div>
+                </div>
+      
+                <h1>
+                  <a href="<?php echo home_url( '/' ); ?>">
+                    <img class="d-block header__main__logo" src="<?php echo get_theme_file_uri( "/assets/icons/todxs-logo-white.svg" ); ?>" alt="" width="150" height="50">
+                  </a>
+                </h1>
+      
+                <?php if( class_exists( 'WooCommerce' ) ): ?>
+                  <button class="cart__btn">
+                    <span class="cart__btn__icon icon icon--misc-cart"></span>
+                    <span class="cart__btn__quantity"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                  </button>
+                <?php endif; ?>
+      
+              </div>
+            </div> <!-- /col-12 -->
+          </div> <!-- /row -->
+          
+          <div class="row mt-2">
+            <div class="col-12">
+              <div class="w-100"><?php echo do_shortcode('[wcas-search-form]'); ?></div>
+            </div>
+          </div> <!-- /row -->
+  
+        </div> <!-- /container -->
+      </div> <!-- /main header -->
+
+    </header>
