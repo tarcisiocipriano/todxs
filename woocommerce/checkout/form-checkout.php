@@ -35,8 +35,10 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
-		<div class="col2-set" id="customer_details">
-			<div class="col-1">
+		<!-- remove col2-set and add row class-->
+		<div class="row" id="customer_details">
+			<!-- change col-1 class to col-6 -->
+			<div class="col-6">
 				<?php do_action( 'woocommerce_checkout_billing' ); ?>
 
 				<!-- add 2 -->
@@ -44,7 +46,8 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 				<!-- /add 2 -->
 			</div>
 
-			<div class="col-2">
+			<!-- change col-2 class to col-6 -->
+			<div class="col-6">
 
 				<!-- remove 2 -->
 
