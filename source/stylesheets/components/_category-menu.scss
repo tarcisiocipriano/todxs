@@ -1,68 +1,124 @@
-$bounce-animation: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+// $bounce-animation: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$bounce-animation: ease;
 
-.category__menu {
+.category-menu {
+  height: 100%;
+  width: 100%;
   background-color: #fff;
+  
+  &--mobile {
+    transform: translateX(-100%);
+    transition: transform .3s;
+    display: block;
+    @include atMedium {
+      display: none;
+    }
+  }
+
+  &--show {
+    transform: translateX(0);
+  }
+
+  @include untilMedium {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+  }
+
+  @include atSmall {
+    width: 400px;
+  }
+
+  @include atMedium {
+    width: 100%;
+  }
 
   ul {
-    margin: 0;
-    padding: 0;
-    font-size: 0.8rem;
-    list-style-type: none;
-
     @include atMedium {
       display: flex;
-      justify-content: space-between;
     }
   }
 
   li {
-    display: flex;
-    flex: 1 1 100px;
-    text-align: center;
+    border-bottom: 1px solid $grey;
+
+    @include atMedium {
+      border: none;
+      display: flex;
+      flex: 1 1 100px;
+      text-align: center;
+    }
   }
   
   a {
     display: block;
     width: 100%;
-    padding: 12px 0;
-
-    color: $black;
+    padding: 16px 0 16px 70px;
+    
+    font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
-
+    color: $black;
+    
     position: relative;
     overflow: hidden;
     transition: padding .2s $bounce-animation;
     
+    @include atMedium {
+      padding: 12px 0;
+      font-size: 0.8rem;
+    }
+    
     span.icon {
-      transition: top .2s $bounce-animation;
-      
       position: absolute;
-      top: 0;
-      left: 50%;
-
-      transform: translateX(-50%) scale(.8);
-
+      left: 30px;
+      top: 50%;
+      transition: top .2s $bounce-animation;
+      transform: translateX(-50%) translateY(-50%) scale(.6);
+      
       @include atMedium {
         top: -50px;
+        left: 50%;
+        transform: translateX(-50%) translateY(0) scale(.8);
       }
     }
   }
+
+
+  &__backdrop {
+    @include untilMedium {
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, .5);
+      position: fixed;
+      top: 0;
+      z-index: 99;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity .3s;
+
+      &--show {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
 }
 
  // expand on desktop to show the icons
- @include atMedium {
-   .header--desktop:hover {
-     .category__menu {
-       a {
-         padding-top: 60px;
-       }
-       span.icon {
-         top: 10px;
-       }
-       a:hover {
-         background-color: lighten( $purple500, 50% );
-       }
-     }
-   }
+@include atMedium {
+  .header-desktop:hover {
+    .category-menu {
+      a {
+        padding-top: 60px;
+      }
+      span.icon {
+        top: 10px;
+      }
+      a:hover {
+        background-color: lighten( $purple500, 50% );
+      }
+    }
+  }
 }

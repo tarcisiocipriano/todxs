@@ -11,7 +11,7 @@ $('.slick-carousel').slick({
 
 // sticky header
 var body = $('body');
-var headerDesktop = $('.header--desktop');
+var headerDesktop = $('.header-desktop');
 var headerNavHeight = 40;
 
 $(window).scroll(function() {
@@ -25,14 +25,22 @@ $(window).scroll(function() {
 });
 
 // open and close menu
-$('.button__burger').click(function () {
-  $('.category__menu').toggleClass('category__menu--active');
-  $('.button__burger').toggleClass('button__burger--toggle');
+function toggleMenu() {
+  $('.button-burger').toggleClass('button-burger--toggle');
+  $('.category-menu').toggleClass('category-menu--show');
+  $('.category-menu__backdrop').toggleClass('category-menu__backdrop--show');
+}
+
+$('.button-burger').click(function () {
+  toggleMenu();
 });
 
-$('.category__menu a').click(function() {
-  $('.category__menu').removeClass('category__menu--active');
-  $('.button__burger').removeClass('button__burger--toggle');
+$('.category-menu a').click(function() {
+  toggleMenu();
+});
+
+$('.category-menu__backdrop').click(function() {
+  toggleMenu();
 });
 
 // $.each($('.woocommerce span.onsale'), function( index, value ) {

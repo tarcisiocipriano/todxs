@@ -22,7 +22,7 @@
 
   <div id="page" class="site">
 
-    <header class="header header--desktop">
+    <header class="header header-desktop">
       
       <!-- nav header -->
       <div class="header__nav" >
@@ -80,12 +80,6 @@
           <!-- main header -->
           <div class="d-flex align-items-center">
   
-            <!-- <div class="button__burger">
-              <div class="line1"></div>
-              <div class="line2"></div>
-              <div class="line3"></div>
-            </div> -->
-  
             <h1>
               <a href="<?php echo home_url( '/' ); ?>">
                 <img class="d-block header__main__logo" src="<?php echo get_theme_file_uri( "/assets/icons/todxs-logo-white.svg" ); ?>" alt="" width="150" height="50">
@@ -107,76 +101,17 @@
       </div> <!-- /main header -->
 
       <!-- category menu -->
-      <div class="category__menu">
+      <div class="category-menu">
         <nav class="container">
-          <ul>
-            <li>
-              <a href="<?php echo site_url( '/categoria-produto/preservativos' ); ?>">
-                <span class="icon icon--cat-preservativos"></span>
-                Preservativos
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo site_url( '/categoria-produto/cosmeticos' ); ?>">
-                <span class="icon icon--cat-cosmeticos"></span>
-                Cosméticos
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo site_url( '/categoria-produto/lubrificantes' ); ?>">
-                <span class="icon icon--cat-lubrificantes"></span>
-                Lubrificantes
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo site_url( '/categoria-produto/higiene' ); ?>">
-                <span class="icon icon--cat-higiene"></span>
-                Higiene
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo site_url( '/categoria-produto/vibradores' ); ?>">
-                <span class="icon icon--cat-vibradores"></span>
-                Vibradores
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo site_url( '/categoria-produto/proteses-e-cintas' ); ?>">
-                <span class="icon icon--cat-proteses"></span>
-                Cintas
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo site_url( '/categoria-produto/plug-anal' ); ?>">
-                <span class="icon icon--cat-plug-anal"></span>
-                Plug Anal
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo site_url( '/categoria-produto/brincadeiras' ); ?>">
-                <span class="icon icon--cat-brincadeiras"></span>
-                Brincadeiras
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo site_url( '/categoria-produto/acessorios' ); ?>">
-                <span class="icon icon--cat-acessorios"></span>
-                Acessórios
-              </a>
-            </li>
-            <li>
-              <a href="<?php echo site_url( '/categoria-produto/linha-sado' ); ?>">
-                <span class="icon icon--cat-linha-sado"></span>
-                Linha Sado
-              </a>
-            </li>
-          </ul>
+          <?php get_template_part( 'template-parts/category-menu' ); ?>
         </nav>
       </div> <!-- /category menu -->
 
     </header>
     
-    <header class="header header--mobile">
+    <!--  -->
+
+    <header class="header header-mobile">
       
       <div class="header__main py-2">
         <div class="container pt-1">
@@ -186,7 +121,7 @@
               <!-- main header -->
               <div class="d-flex align-items-center justify-content-between">
       
-                <div class="button__burger">
+                <div class="button-burger">
                   <div class="line1"></div>
                   <div class="line2"></div>
                   <div class="line3"></div>
@@ -219,3 +154,11 @@
       </div> <!-- /main header -->
 
     </header>
+
+    <!-- category menu -->
+    <div class="category-menu category-menu--mobile">
+      <nav>
+        <?php get_template_part( 'template-parts/category-menu' ); ?>
+      </nav>
+    </div> <!-- /category menu -->
+    <div class="category-menu__backdrop"></div>
