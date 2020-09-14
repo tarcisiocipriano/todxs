@@ -3,37 +3,6 @@ $bounce-animation: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 .category__menu {
   background-color: #fff;
 
-  // mobile styles
-  @include untilMedium {
-    width: 100vw;
-    height: 100vh;
-    padding: 24px 0;
-
-    box-shadow: 0 10px 10px rgba(0, 0, 0, .25);
-
-    position: absolute;
-    left: 0;
-    transform: translateX(-100%);
-
-    transition: .3s;
-    
-    ul {
-      display: block;
-    }
-    li {
-      margin-bottom: .75em;
-    }
-    a {
-      padding-left: 3em;
-    }
-  }
-
-  // slide the menu on mobile
-  &--active {
-    transform: translateX(0);
-    overflow: hidden;
-  }
-
   ul {
     margin: 0;
     padding: 0;
@@ -79,21 +48,21 @@ $bounce-animation: cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
     }
   }
+}
 
-  // expand on desktop to show the icons
-  @include atMedium {
-    &:hover {
-      a {
-        padding-top: 60px;
-      }
-      span.icon {
-        top: 10px;
-      }
-    }
-    a:hover {
-      background-color: lighten( $purple500, 50% );
-    }
-  }
-
-  
+ // expand on desktop to show the icons
+ @include atMedium {
+   .header--desktop:hover {
+     .category__menu {
+       a {
+         padding-top: 60px;
+       }
+       span.icon {
+         top: 10px;
+       }
+       a:hover {
+         background-color: lighten( $purple500, 50% );
+       }
+     }
+   }
 }
