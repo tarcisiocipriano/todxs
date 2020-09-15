@@ -10,7 +10,7 @@
   transition: box-shadow .2s;
 
   &:hover, &:focus {
-    box-shadow: 0 0 15px rgba($purple, .4);
+    box-shadow: 0 0 15px rgba($purple300, .4);
     outline: none;
   }
   // hide button to see the cart after click on buy
