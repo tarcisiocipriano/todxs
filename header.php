@@ -134,10 +134,10 @@
                 </h1>
       
                 <?php if( class_exists( 'WooCommerce' ) ): ?>
-                  <button class="cart__btn">
+                  <a class="cart__btn" href="<?php echo wc_get_cart_url(); ?>">
                     <span class="cart__btn__icon icon icon--misc-cart"></span>
                     <span class="cart__btn__quantity"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-                  </button>
+                  </a>
                 <?php endif; ?>
       
               </div>
