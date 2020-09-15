@@ -31,14 +31,14 @@ get_header(); ?>
       </section>
       <section class="popular-products">
         <div class="container">
-          <h2>Os mais populares</h2>
+          <h2 class="section-title">Os mais populares</h2>
           <!-- to-do: carousel -->
           <?php echo do_shortcode( '[products limit="4" columns="4" orderby="popularity"]' ); ?>
         </div>
       </section>
       <section class="new-arrivals">
         <div class="container">
-          <h2>Os mais vendidos</h2>
+          <h2 class="section-title">Os mais vendidos</h2>
           <!-- to-do: carousel -->
           <?php echo do_shortcode( '[products limit="4" columns="4" orderby="date"]' ); ?>
         </div>

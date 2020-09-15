@@ -80,7 +80,7 @@
           <!-- main header -->
           <div class="d-flex align-items-center">
   
-            <h1>
+            <h1 class="header__logo">
               <a href="<?php echo home_url( '/' ); ?>">
                 <img class="d-block header__main__logo" src="<?php echo get_theme_file_uri( "/assets/icons/todxs-logo-white.svg" ); ?>" alt="" width="150" height="50">
               </a>
@@ -127,7 +127,7 @@
                   <div class="line3"></div>
                 </div>
       
-                <h1>
+                <h1 class="header__logo">
                   <a href="<?php echo home_url( '/' ); ?>">
                     <img class="d-block header__main__logo" src="<?php echo get_theme_file_uri( "/assets/icons/todxs-logo-white.svg" ); ?>" alt="" width="150" height="50">
                   </a>

@@ -1,0 +1,11 @@
+.woocommerce-account {
+  h1:not(.header__logo) {
+    display: none;
+  }
+}
+
+.woocommerce-account.logged-in {
+  h1 {
+    display: block;
+  }
+}

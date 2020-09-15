@@ -1,7 +1,30 @@
+@font-face {
+  font-family: "Sexy Queen";
+  src: url("../assets/fonts/Sexy-Queen.ttf");
+}
+
 body {
   font-family: 'Rajdhani', sans-serif;
 }
 
 a {
   color: $blue400;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.home main .section-title {
+  font-family: 'Sexy Queen', cursive;
+  color: $purple400;
+  font-size: 3rem;
+  
+  @include atMedium {
+    font-size: 4rem;
+  }
 }
