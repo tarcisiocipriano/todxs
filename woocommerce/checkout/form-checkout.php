@@ -35,45 +35,66 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
-		<!-- remove col2-set and add row class-->
 		<div class="row" id="customer_details">
-			<!-- change col-1 class to col-12 col-md-6 -->
-			<div class="col-12 col-md-6">
+			<div class="col-12">
+				<!-- user info -->
 				<?php do_action( 'woocommerce_checkout_billing' ); ?>
-
-				<!-- add 2 -->
+				<!-- other adress -->
 				<?php do_action( 'woocommerce_checkout_shipping' ); ?>
-				<!-- /add 2 -->
 			</div>
 
-			<!-- change col-2 class to col-12 col-md-6 -->
-			<div class="col-12 col-md-6">
+		</div>
+		
+		<hr>
 
-				<!-- remove 2 -->
-
-				<!-- add 1 -->
-				<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
+		<div class="row">
+			
+			<div class="col-12">
+				<!-- additional-fields (moved from checkout_shipping "other adress") -->
+				<div class="woocommerce-additional-fields mt-3">
 	
+					<?php do_action( 'woocommerce_before_order_notes', $checkout ); ?>
+	
+					<?php if ( apply_filters( 'woocommerce_enable_order_notes_field', 'yes' === get_option( 'woocommerce_enable_order_comments', 'yes' ) ) ) : ?>
+	
+						<?php if ( ! WC()->cart->needs_shipping() || wc_ship_to_billing_address_only() ) : ?>
+	
+							<h3><?php esc_html_e( 'Additional information', 'woocommerce' ); ?></h3>
+	
+						<?php endif; ?>
+	
+						<div class="woocommerce-additional-fields__field-wrapper">
+							<?php foreach ( $checkout->get_checkout_fields( 'order' ) as $key => $field ) : ?>
+								<?php woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
+							<?php endforeach; ?>
+						</div>
+	
+					<?php endif; ?>
+	
+					<?php do_action( 'woocommerce_after_order_notes', $checkout ); ?>
+				</div>
+			</div>
+
+			<div class="col-12">
+				<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
+		
 				<h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3>
 				
 				<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
-
+	
 				<div id="order_review" class="woocommerce-checkout-review-order">
 					<?php do_action( 'woocommerce_checkout_order_review' ); ?>
 				</div>
-
+	
 				<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
-				<!-- /add 1 -->
-
 			</div>
+
 		</div>
 
 		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 
 	<?php endif; ?>
 	
-	<!-- remove 1 -->
-
 </form>
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>

@@ -11,12 +11,18 @@ a {
   color: $blue400;
 }
 
-h1 {
+h1:not(.header__logo) {
   font-size: 2rem;
+  padding: .5em 0;
 }
 
 h2 {
   font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  padding: .5em 0;
 }
 
 .home main .section-title {

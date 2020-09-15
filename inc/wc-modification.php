@@ -59,5 +59,9 @@ function todxs_wc_modify() {
     return false;
   } */
 
+  // remove privacy policy text from checkout page
+  remove_action( 'woocommerce_checkout_terms_and_conditions', 'wc_checkout_privacy_policy_text', 20 );
+  remove_action( 'woocommerce_checkout_terms_and_conditions', 'wc_terms_and_conditions_page_content', 30 );
+
 }
 add_action( 'wp', 'todxs_wc_modify' );

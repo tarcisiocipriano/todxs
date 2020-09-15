@@ -21,29 +21,47 @@
   max-height: 40px;
 }
 
-textarea {
+// textarea
+.woocommerce form .form-row textarea {
   @extend #input-base;
-  height: 120px;
+  min-height: 120px;
+  max-height: 120px;
+}
+.select2-container .select2-selection--single .select2-selection__rendered {
+  padding-left: 0;
+  line-height: 1.5;
 }
 
-.woocommerce form .form-row {
-  display: block;
-
-  label {
-    margin: 0;
-    line-height: 1;
-    margin-bottom: 8px;
+// select component
+.select2-container--default .select2-selection--single {
+  @extend #input-base;
+  height: 40px;
+  .select2-selection__arrow {
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
-// .woocommerce-product-attributes-item .woocommerce-product-attributes-item--weight {
-//   background-color: red;
-// }
+// form row
+.woocommerce form .form-row {
+  display: block;
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
 
-// .woocommerce-Tabs-panel .woocommerce-Tabs-panel--additional_information .panel .entry-content .wc-tab {
-//   background-color: red;
-// }
+  label {
+    margin-bottom: 8px;
+    color: $purple400;
+    font-weight: 600;
+    line-height: .8;
+  }
 
-// .woocommerce-product-attributes .shop_attributes {
-//   background-color: red;
-// }
+  .required {
+    color: $purple200;
+  }
+}
+
+// set the validated border color to normal
+.woocommerce form .form-row.woocommerce-validated input.input-text {
+  border: 1px solid $grey;
+}

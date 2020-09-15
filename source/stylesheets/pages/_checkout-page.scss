@@ -1,0 +1,175 @@
+// remove coupon toggle
+.woocommerce-form-coupon-toggle {
+  display: none;
+}
+// fix overlay index
+.woocommerce .blockUI.blockOverlay {
+  z-index: 1 !important;
+}
+
+%card-base {
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .05);
+
+}
+%card-base--padding-bigger-at-medium {
+  @extend %card-base;
+  @include untilSmall {
+    padding: 16px;
+  }
+  padding: 30px;
+}
+
+// card create account
+.woocommerce-account-fields {
+  @extend %card-base--padding-bigger-at-medium;
+  margin-bottom: 16px;
+}
+// card user info
+.woocommerce-billing-fields__field-wrapper {
+  @extend %card-base--padding-bigger-at-medium;
+  margin-bottom: 16px;
+}
+// card different adress
+.woocommerce-shipping-fields__field-wrapper {
+  @extend %card-base--padding-bigger-at-medium;
+  margin-bottom: 16px;
+}
+// card notes
+.woocommerce-additional-fields__field-wrapper {
+  @extend %card-base--padding-bigger-at-medium;
+  margin-bottom: 16px;
+}
+.woocommerce-checkout #payment {
+  @extend %card-base;
+  padding: 0;
+}
+
+// remove extra margin-bottom from password field
+.create-account #account_password_field {
+  margin-bottom: 0;
+}
+
+// style the inputs
+.woocommerce-billing-fields__field-wrapper, .woocommerce-shipping-fields__field-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  p {
+    flex: 1 1 100%;
+  }
+  #billing_first_name_field, #shipping_first_name_field {
+    flex-basis: 33.33%;
+  }
+  #billing_last_name_field, #shipping_last_name_field {
+    flex-basis: 33.33%;
+  }
+  #billing_country_field, #shipping_country_field {
+    flex-basis: 20%;
+  }
+  #billing_address_1_field, #shipping_address_1_field {
+    flex-basis: 80%;
+  }
+  #billing_city_field, #shipping_city_field {
+    flex-basis: 50%;
+  }
+  #billing_state_field, #shipping_state_field {
+    flex-basis: 50%;
+  }
+  #billing_postcode_field, #shipping_postcode_field {
+    flex-basis: 50%;
+  }
+  #billing_phone_field {
+    flex-basis: 50%;
+  }
+  #billing_email_field {
+    flex-basis: 100%;
+  }
+  @include atMedium {
+    #billing_company_field, #shipping_company_field {
+      flex-basis: 33.33%;
+    }
+    #billing_country_field, #shipping_country_field {
+      flex-basis: 10%;
+    }
+    #billing_address_1_field, #shipping_address_1_field {
+      flex-basis: 40%;
+    }
+    #billing_address_2_field, #shipping_address_2_field {
+      align-self: flex-end;
+      flex-basis: 40%;
+    }
+    #billing_city_field, #shipping_city_field {
+      flex-basis: 25%;
+      margin-bottom: 0;
+    }
+    #billing_state_field, #shipping_state_field {
+      flex-basis: 25%;
+    }
+    #billing_postcode_field, #shipping_postcode_field {
+      flex-basis: 25%;
+    }
+    #billing_phone_field {
+      flex-basis: 33.33%;
+      margin-bottom: 0;
+    }
+    #billing_email_field {
+      flex-basis: 33.33%;
+    }
+    // clear bottom margin at other address
+    #shipping_city_field {
+      margin-bottom: 0;
+    }
+    #shipping_state_field {
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+// ---------- order review and payment styles ----------
+.woocommerce table.shop_table {
+  margin-bottom: 0;
+}
+.woocommerce .table-location form.checkout_coupon {
+  margin: 0;
+  display: flex;
+  background-color: #fff;
+  border-top: none;
+  border-radius: 0;
+  p {
+    margin: 0;
+  }
+  & p:first-child {
+    display: none;
+  }
+  .form-row.form-row-first {
+    width: auto;
+  }
+  .button {
+    min-width: 140px;
+  }
+}
+.woocommerce-checkout {
+  .woocommerce-error, .woocommerce-info, .woocommerce-message {
+    margin: 0;
+    border-right: 1px solid $grey;
+    border-left: 1px solid $grey;
+  }
+}
+
+// remove button margin
+.woocommerce .payment-location {
+  button.button.alt {
+    margin: 0;
+    width: 100%;
+    min-height: 60px;
+    font-size: 1.25em;
+  }
+}
+// remove button floating
+.woocommerce #payment #place_order, .woocommerce-page #payment #place_order {
+  float: none;
+  margin-bottom: 0;
+}
