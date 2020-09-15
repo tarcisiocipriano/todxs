@@ -37,8 +37,8 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 		<!-- remove col2-set and add row class-->
 		<div class="row" id="customer_details">
-			<!-- change col-1 class to col-6 -->
-			<div class="col-6">
+			<!-- change col-1 class to col-12 col-md-6 -->
+			<div class="col-12 col-md-6">
 				<?php do_action( 'woocommerce_checkout_billing' ); ?>
 
 				<!-- add 2 -->
@@ -46,8 +46,8 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 				<!-- /add 2 -->
 			</div>
 
-			<!-- change col-2 class to col-6 -->
-			<div class="col-6">
+			<!-- change col-2 class to col-12 col-md-6 -->
+			<div class="col-12 col-md-6">
 
 				<!-- remove 2 -->
 
