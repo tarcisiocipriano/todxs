@@ -53,6 +53,14 @@ $('.category-menu__backdrop').click(function() {
 //   });
 // });
 
+lottie.loadAnimation({
+  container: document.getElementById('lottie-not-found'), // the dom element that will contain the animation
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'https://assets10.lottiefiles.com/packages/lf20_4DPcyu.json' // the path to the animation json
+});
+
 /* -------------------- rebuild review order layout to add the cupon --------------------*/
 // select the elements
 var checkout_coupon = $('.checkout_coupon').addClass('d-flex');

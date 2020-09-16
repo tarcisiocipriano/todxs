@@ -9,10 +9,11 @@ get_header(); ?>
   <main>
     <div class="container">
       <div class="error-404">
-        <div class="d-flex flex-column align-items-center">
+        <div class="text-center">
           <h1>Página não encontrada</h1>
           <a href="<?php echo home_url( '/' ); ?>" style="width: 400px; margin: -50px 0;" id="pride"></a>
-          <p>A página que você tentou acessar, não existe nesse site...</p>
+          <p>A página que você tentou acessar, não existe...</p>
+          <div id="lottie-not-found"></div>
         </div>
       </div>
     </div>
