@@ -1,8 +1,12 @@
 // cards
 .woocommerce form.login, .woocommerce form.register {
-  background-color: #fff;
+  @extend %card-base--padding-bigger-at-medium;
+  margin-top: 0;
+  margin-bottom: 20px;
   border: none;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, .05);
+  @include atMedium {
+    margin: 0;
+  }
 }
 
 // line access button + remember
@@ -47,3 +51,7 @@ p.woocommerce-LostPassword.lost_password {
   }
 }
 
+// privacy policy text
+.woocommerce-privacy-policy-text {
+	display: none;
+}
