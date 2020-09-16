@@ -108,17 +108,15 @@ $bounce-animation: ease;
 
  // expand on desktop to show the icons
 @include atMedium {
-  .header-desktop:hover {
-    .category-menu {
-      a {
-        padding-top: 60px;
-      }
-      span.icon {
-        top: 10px;
-      }
-      a:hover {
-        background-color: lighten( $purple500, 50% );
-      }
+  .category-menu:hover {
+    a {
+      padding-top: 60px;
+    }
+    span.icon {
+      top: 10px;
+    }
+    a:hover {
+      background-color: lighten( $purple500, 50% );
     }
   }
 }

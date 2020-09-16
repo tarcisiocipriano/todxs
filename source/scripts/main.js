@@ -10,19 +10,19 @@ $('.slick-carousel').slick({
 });
 
 // sticky header
-var body = $('body');
-var headerDesktop = $('.header-desktop');
-var headerNavHeight = 40;
+// var body = $('body');
+// var headerDesktop = $('.header-desktop');
+// var headerNavHeight = 40;
 
-$(window).scroll(function() {
-  if ($(window).width() >= 992 && $(window).scrollTop() > headerNavHeight) {
-    headerDesktop.addClass('fixed-top').css('margin-top', -headerNavHeight);
-    body.css('margin-top', headerDesktop.height());
-  } else {
-    headerDesktop.removeClass('fixed-top').css('margin-top', 0);
-    body.css('margin-top', 0);
-  }
-});
+// $(window).scroll(function() {
+//   if ($(window).width() >= 992 && $(window).scrollTop() > headerNavHeight) {
+//     headerDesktop.addClass('fixed-top').css('margin-top', -headerNavHeight);
+//     body.css('margin-top', headerDesktop.height());
+//   } else {
+//     headerDesktop.removeClass('fixed-top').css('margin-top', 0);
+//     body.css('margin-top', 0);
+//   }
+// });
 
 // open and close menu
 function toggleMenu() {

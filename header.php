@@ -25,6 +25,7 @@
     <header class="header header-desktop">
       
       <!-- nav header -->
+      <?php if ( !(is_cart() || is_checkout() )): ?>
       <div class="header__nav" >
         <div class="container">
           <div class="row">
@@ -73,6 +74,7 @@
           </div> <!-- /row --> 
         </div> <!-- /container -->
       </div> <!-- /nav header -->
+      <?php endif; ?>
 
       <div class="header__main py-4">
         <div class="container">
@@ -101,11 +103,13 @@
       </div> <!-- /main header -->
 
       <!-- category menu -->
+      <?php if ( !(is_cart() || is_checkout() )): ?>
       <div class="category-menu">
         <nav class="container">
           <?php get_template_part( 'template-parts/category-menu' ); ?>
         </nav>
       </div> <!-- /category menu -->
+      <?php endif; ?>
 
     </header>
     

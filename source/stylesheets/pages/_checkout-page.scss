@@ -10,22 +10,22 @@
 // card create account
 .woocommerce-account-fields {
   @extend %card-base--padding-bigger-at-medium;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 // card user info
 .woocommerce-billing-fields__field-wrapper {
   @extend %card-base--padding-bigger-at-medium;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 // card different adress
 .woocommerce-shipping-fields__field-wrapper {
   @extend %card-base--padding-bigger-at-medium;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 // card notes
 .woocommerce-additional-fields__field-wrapper {
   @extend %card-base--padding-bigger-at-medium;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 .woocommerce-checkout #payment {
   @extend %card-base;

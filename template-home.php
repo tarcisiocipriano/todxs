@@ -57,7 +57,7 @@ get_header(); ?>
           </div>
         </div>
       </section> -->
-      <section class="todxs-blog">
+      <!-- <section class="todxs-blog">
         <div class="container">
           <h2>Notícias</h2>
           <div class="row">
@@ -88,7 +88,7 @@ get_header(); ?>
             <?php endif; ?>
           </div>
         </div>
-      </section>
+      </section> -->
     </main>
   </div>
 
