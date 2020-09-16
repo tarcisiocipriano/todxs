@@ -1,4 +1,4 @@
-#input-base {
+%input-base {
   display: block;
   box-sizing: border-box;
 
@@ -16,14 +16,14 @@
 }
 
 .input-text, .qty-text, .comment-form input {
-  @extend #input-base;
+  @extend %input-base;
   min-height: 40px;
   max-height: 40px;
 }
 
 // textarea
 .woocommerce form .form-row textarea {
-  @extend #input-base;
+  @extend %input-base;
   min-height: 120px;
   max-height: 120px;
 }
@@ -34,7 +34,7 @@
 
 // select component
 .select2-container--default .select2-selection--single {
-  @extend #input-base;
+  @extend %input-base;
   height: 40px;
   .select2-selection__arrow {
     top: 50%;

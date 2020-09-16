@@ -1,0 +1,13 @@
+%card-base {
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .05);
+}
+%card-base--padding-bigger-at-medium {
+  @extend %card-base;
+  @include untilSmall {
+    padding: 16px;
+  }
+  padding: 30px;
+}
