@@ -1,0 +1,5 @@
+.container {
+  @include untilMedium {
+    max-width: 100%;
+  }
+}
