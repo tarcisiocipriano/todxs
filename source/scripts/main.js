@@ -76,6 +76,6 @@ $('#order_review > #payment').remove();
 order_review_area.append('<div class="row"></div>');
 $('#order_review > .row')
 .append('<div class="table-location col-12 col-lg-6 mb-3 mb-lg-0"></div>')
-.append('<div class="payment-location col-12 col-lg-6"></div>')
+.append('<div class="payment-location col-12 col-lg-6"></div>');
 $('.payment-location').append(order_review_payment);
 $('.table-location').append(order_review_table).append(checkout_coupon);
