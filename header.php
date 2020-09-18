@@ -13,7 +13,7 @@
 <html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
   <link rel="profile" href="https://gmpg.org/xfn/11">
   <?php wp_head(); ?>
@@ -33,7 +33,7 @@
             <div class="col-6 header__nav__contact">
               <ul>
                 <li>
-                  <span class="icon icon--social-whatsapp"></span>
+                  <span class="icon icon--social-whatsapp-white"></span>
                   <span>(81) 98222-0235</span>
                 </li>
               </ul>

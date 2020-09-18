@@ -1,6 +1,24 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* margin-bottom = footer height */
+  margin-bottom: 307px;
+  @include atMedium {
+    margin-bottom: 190px;
+  }
+}
+
 .footer {
-  background-color: $purple400;
+  width: 100%;
+
   color: #fff;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
 
   a {
     color: #fff;
@@ -11,7 +29,39 @@
     padding: 20px 0;
   }
 
-  .copyright {
+  &__content {
+    background-color: #fff;
+    h4 {
+      font-size: 1rem;
+      margin-bottom: .75em;
+      font-weight: 600;
+      color: $black;
+    }
+    li {
+      transform: scale(.8);
+      
+      @include atMedium {
+        transform: scale(1);
+      }
+    }
+    li:not(:last-child) {
+      margin-right: 8px;
+      @include atMedium {
+        margin-right: 16px;
+      }
+    }
+    &__payment {
+      border-bottom: 1px solid $grey;
+      @include atMedium {
+        border: none;
+      }
+    }
+  }
+
+  &__copyright {
     background-color: $purple500;
+    p {
+      padding: 8px 0;
+    }
   }
 }
