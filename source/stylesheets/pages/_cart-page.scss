@@ -1,17 +1,143 @@
-// coupon input
-.woocommerce-cart table.cart td.actions .coupon .input-text {
-  @include atSmall {
-    width: 150px;
-    margin-right: 12px;
+.woocommerce-cart-form {
+  margin-bottom: 24px;
+
+  /*
+    make the table row divisions more clear in small devices
+  */
+  .cart_item {
+    // background-color: red;
+    @include untilSmall {
+      &:not(:nth-last-child(-n+2)) {
+        border-bottom: 1px solid $grey;
+      }
+    }
+  }
+
+  /*
+    align product header title
+  */
+  table.shop_table thead th.product-name {
+    @include atSmall {
+      padding-left: 24px;
+    }
   }
 }
-// coupon button
-.coupon button.button {
-  border-color: $blue300;
-  color: $blue300;
+
+
+.woocommerce-cart-form table.cart {
+  @extend %card-base;
+  overflow: hidden;
   
-  &:hover, &:focus {
-    color: $blue300;
+  tr {
+    margin: 0 24px;
+    @include untilSmall {
+      padding: 24px 0 16px 0;
+      &:nth-child(2n) td {
+        background: transparent;
+      }
+    }
+  }
+  td {
+    @include untilSmall {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+  }
+
+  .product-name {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    a {
+      margin: 0 16px;
+    }
+    img {
+      display: block;
+      width: 80px;
+      height: 80px;
+      @include untilSmall {
+        margin-bottom: 8px;
+      }
+    }
+    @include untilSmall {
+      flex-direction: column;
+      &::before {
+        content: none;
+      }
+    }
+  }
+  .product-price {
+    font-weight: 600;
+    @include untilSmall {
+      text-align: center !important;
+      &::before {
+        float: none;
+        margin-right: 8px;
+        font-weight: 600;
+      }
+    }
+    @include atSmall {
+      width: 100px;
+    }
+  }
+  .product-quantity {
+    font-weight: 600;
+    @include untilSmall {
+      div.qib-container {
+        margin: 4px auto;
+      }
+    }
+    &::before {
+      content: none;
+    }
+    @include untilSmall {
+    }
+    @include atSmall {
+      width: 160px;
+    }
+  }
+  .product-subtotal {
+    font-weight: 600;
+    @include untilSmall {
+      text-align: center !important;
+      &::before {
+        font-weight: 600;
+        float: none;
+        margin-right: 8px;
+      }
+    }
+    @include atSmall {
+      width: 100px;
+    }
+  }
+  .product-remove {
+    @include untilSmall {
+      a {
+        width: auto;
+        margin: 0 auto;
+        margin-right: -12px;
+        &::before {
+          content: 'Remover';
+          font-size: 1rem;
+          font-weight: 500;
+          color: $red500;
+          visibility: visible;
+        }
+        visibility: hidden;
+      }
+    }
+    @include atSmall {
+      a {
+        transition: .2s;
+      }
+      width: 50px;
+    }
+  }
+}
+
+.woocommerce table.shop_table td {
+  @include untilSmall {
+    border: none;
   }
 }
 
@@ -25,18 +151,6 @@
   }
   th {
     padding: 20px !important;
-  }
-}
-
-/*
-  align quantity input to the right at small devices
-*/
-.woocommerce table.shop_table tbody tr td, .woocommerce table.shop_table tfoot tr td {
-  &.product-quantity {
-    @include untilSmall {
-      display: flex;
-      justify-content: space-between;
-    }
   }
 }
 
@@ -58,6 +172,6 @@
 */
 .woocommerce-cart .cart-collaterals .cart_totals table tr.woocommerce-shipping-totals.shipping td {
   @include untilSmall {
-    background-color: #fff;
+    background-color: transparent;
   }
 }
