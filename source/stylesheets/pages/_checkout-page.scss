@@ -116,13 +116,17 @@
 // ---------- order review and payment styles ----------
 .woocommerce table.shop_table {
   margin-bottom: 0;
+  @extend %card-base;
+  overflow: hidden;
+  border-radius: 5px 5px 0 0;
 }
 .woocommerce .table-location form.checkout_coupon {
+  @extend %card-base;
   margin: 0;
   display: flex;
-  background-color: #fff;
-  border-top: none;
-  border-radius: 0;
+  border: none;
+  border-top: 1px solid $grey;
+  border-radius: 0 0 5px 5px;
   p {
     margin: 0;
   }
