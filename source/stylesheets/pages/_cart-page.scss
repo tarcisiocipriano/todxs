@@ -142,15 +142,66 @@
 }
 
 // cart totals container
-.cart_totals {
-
-  // header
-  .cart-subtotal {
-    background-color: $purple400;
-    color: #fff;
-  }
+.cart_totals table.shop_table.shop_table_responsive {
+  @extend %card-base;
   th {
-    padding: 20px !important;
+    width: 100px;
+  }
+  tbody {
+    box-shadow: none;
+  }
+  tr.woocommerce-shipping-totals {
+    td {
+      display: flex;
+      flex-direction: column;
+      @include untilSmall {
+        text-align: left !important;
+      }
+      .woocommerce-shipping-calculator {
+        margin: 0 0 16px 0;
+        p {
+          margin: 0 0 16px 0;
+          padding: 0;
+        }
+      }
+      #shipping_method {
+        order: 2;
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          width: 100%;
+          padding: 16px;
+
+          display: flex;
+          flex-direction: column;
+
+          border: 1px solid $grey;
+          border-radius: 5px;
+          text-align: center;
+          @include atSmall {
+            width: 180px;
+            margin: 0 16px 16px 0;
+          }
+          input {
+            order: 1;
+            margin: 8px auto 0 auto;
+            position: relative;
+            &::before, &::after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              right: 16px;
+              width: 70px;
+              height: 1px;
+              background-color: $grey;
+            }
+            &::after {
+              left: 16px;
+            }
+          } // shipping radio button
+        } // shipping card
+      } // shipping container
+    }
   }
 }
 
