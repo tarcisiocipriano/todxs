@@ -33,57 +33,66 @@ $bounce-animation: ease;
     width: 100%;
   }
 
-  ul {
-    @include atMedium {
-      display: flex;
+  &__container {
+    ul {
+      @include atMedium {
+        display: flex;
+      }
     }
-  }
-
-  li {
-    border-bottom: 1px solid $grey;
-
-    @include atMedium {
-      border: none;
-      display: flex;
-      flex: 1 1 100px;
-      text-align: center;
-    }
-  }
   
-  a {
-    display: block;
-    width: 100%;
-    padding: 16px 0 16px 70px;
-    
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    color: $black;
-    
-    position: relative;
-    overflow: hidden;
-    transition: padding .2s $bounce-animation;
-    
-    @include atMedium {
-      padding: 12px 0;
-      font-size: 0.8rem;
+    li {
+      border-bottom: 1px solid $grey;
+  
+      @include atMedium {
+        border: none;
+        display: flex;
+        flex: 1 1 100px;
+        text-align: center;
+      }
     }
     
-    span.icon {
-      position: absolute;
-      left: 30px;
-      top: 50%;
-      transition: top .2s $bounce-animation;
-      transform: translateX(-50%) translateY(-50%) scale(.6);
+    a {
+      display: block;
+      width: 100%;
+      padding: 16px 0 16px 70px;
+      
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: $black;
+      
+      position: relative;
+      overflow: hidden;
+      transition: padding .2s $bounce-animation;
       
       @include atMedium {
-        top: -50px;
-        left: 50%;
-        transform: translateX(-50%) translateY(0) scale(.8);
+        padding: 12px 0;
+        font-size: 0.8rem;
+      }
+      
+      span.icon {
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        transition: top .2s $bounce-animation;
+        transform: translateX(-50%) translateY(-50%) scale(.6);
+        
+        @include atMedium {
+          top: -50px;
+          left: 50%;
+          transform: translateX(-50%) translateY(0) scale(.8);
+        }
       }
     }
   }
 
+  &__topbar {
+    background-color: $purple400;
+    padding: 15px;
+    a {
+      color: #fff;
+    }
+  }
 
   &__backdrop {
     @include untilMedium {
@@ -108,7 +117,7 @@ $bounce-animation: ease;
 
  // expand on desktop to show the icons
 @include atMedium {
-  .category-menu:hover {
+  .category-menu__container:hover {
     a {
       padding-top: 60px;
     }

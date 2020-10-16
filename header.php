@@ -104,10 +104,10 @@
 
       <!-- category menu -->
       <?php if ( !(is_cart() || is_checkout() )): ?>
-      <div class="category-menu">
-        <nav class="container">
+      <div class="category-menu__container">
+        <div class="container">
           <?php get_template_part( 'template-parts/category-menu' ); ?>
-        </nav>
+        </div>
       </div> <!-- /category menu -->
       <?php endif; ?>
 
@@ -161,7 +161,43 @@
 
     <!-- category menu -->
     <div class="category-menu category-menu--mobile">
-      <nav>
+
+      <div class="category-menu__topbar d-flex align-items-center justify-content-between">
+
+        <div class="button-burger button-burger--togle">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        
+        <?php if( class_exists( 'WooCommerce' ) ): ?>
+          <div class="">
+            <ul>
+              <?php if( is_user_logged_in() ): ?>
+              <li>
+                <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>">
+                  Minha Conta
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo esc_url( wp_logout_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ) ); ?>">
+                  Sair
+                </a>
+              </li>
+              <?php else: ?>
+              <li>
+                <a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>">
+                  Entrar / Criar conta
+                </a>
+              </li>
+              <?php endif; ?>
+            </ul>
+          </div>
+        <?php endif; ?>
+        
+      </div><!-- /navigation -->
+
+      <nav class="category-menu__container">
         <?php get_template_part( 'template-parts/category-menu' ); ?>
       </nav>
     </div> <!-- /category menu -->
